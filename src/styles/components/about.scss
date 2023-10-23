@@ -1,0 +1,49 @@
+#about-section{
+    min-height: calc(100vh - 80px);  
+    width: 100%;
+    padding-top:50px;
+    .about-text{
+        width: 100%;
+        padding:0 20rem;
+        p{
+            font-size: 40px ;
+            text-transform: uppercase;
+            line-height: 60px;
+        }
+    }
+    .badges-container{
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap:2em;
+        padding:5% 0;
+        .badge{
+            border-radius: 20px;
+            border: solid 0.5px black;
+            height: 160px;
+            width: 160px;
+            box-shadow: 5px 5px #888888;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap:10px;
+            .icon{
+                width: 100%;
+                font-size: 40px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            h1{
+                color: var(--secondary-color);
+                font-weight: bold;
+                font-size: 35px;
+            }   
+            p{
+
+            }
+        }
+    }
+}

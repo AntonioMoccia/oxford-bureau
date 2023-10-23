@@ -1,0 +1,44 @@
+#services{
+    min-height: 100vh;
+    width: 100%;
+    padding: 0 5%;
+    display: flex;
+    flex-direction: column;
+    gap:5vh;
+    .service{
+        display: flex;
+        gap: 5em;
+        justify-content: space-between;
+        img{
+            width: 45%;
+            border-top-right-radius: 30px;
+            border-bottom-right-radius: 30px;
+        }
+        .service-description{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 100%;
+            h1{
+                font-size: 4vw;
+            }
+            p{
+                width: 100%;
+                display: flex;
+                text-wrap: wrap;
+                font-size: 30px;
+                margin-top:5%
+            }
+        }
+    }
+    .right-img{
+        flex-direction: row-reverse;
+        img{
+            width: 45%;
+            border-top-left-radius: 30px;
+            border-bottom-left-radius: 30px;
+            border-top-right-radius: 0px;
+            border-bottom-right-radius: 0px;
+        }
+    }
+}

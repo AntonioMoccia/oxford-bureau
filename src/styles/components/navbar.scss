@@ -1,0 +1,40 @@
+.navbar-container {
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5%;
+    background-color: white;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+
+    .nav {
+        width: 50%;
+        display: flex;
+        justify-content: flex-end;
+        height: 100%;
+
+        .nav-list {
+            width: 50%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            li.nav-item {
+                list-style: none;
+                cursor: pointer;
+            }
+            li.nav-item:hover:before{
+                content: '';
+                background-color: red;
+                color: blue;
+                width: 100%;
+                position: absolute;
+                height: 1px;
+                bottom: 0;
+            }
+        }
+    }
+}

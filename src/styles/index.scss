@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+@import './components/navbar.scss';
+@import './components/hero.scss';
+@import './components/about.scss';
+@import './components/services.scss';
+@import './components/contact.scss';
+* {
+    padding: 0;
+    margin:0;
+    box-sizing: border-box;
+    font-family: 'Josefin Sans', sans-serif;
+}
+:root{
+    --primary-color:#FFFFFF;
+    --secondary-color:#5956E9;
+    --btn-primary-color:#5956E9;
+}
