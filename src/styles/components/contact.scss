@@ -1,34 +1,82 @@
 #contacts {
-    width: 100%;
-    min-height: 100vh;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5rem;
+
+  .section-contacts {
+    height: 100vh;
+    width: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: red;
+    flex-direction: column;
+    background-color: var(--secondary-color);
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      width: 70%;
+      gap: 10px;
+      label {
+        color: white;
+      }
+      label:not(:first-child) {
+        margin-top: 3rem;
+      }
+      input,
+      textarea {
+        background-color: var(--secondary-color);
 
-    .section-contacts {
-        height: 100vh;
+        outline: none;
+        color: white;
+        font-size: 18px;
+        text-align: left;
+        border: none;
+        border-bottom: 1px solid white;
+      }
+      /*       input::before {
+        content: " ";
+        position: absolute;
+        display: block;
+        bottom: 0;
+        left: 0;
+        width: 100vw;
+        height: 10px;
+      } */
+    }
+    button {
+      width: 5rem;
+      height: 1.5rem;
+      margin-top: 3rem;
+      color: var(--secondary-color);
+      background-color: white;
+      border: none;
+      border-radius: 2px;
+    }
+  }
+  .left {
+    align-items: center;
+  }
+
+  .right {
+    p,h4{
         width: 50%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        .contact-form{
-            display: flex;
-            flex-direction: column;
-            input{
-                background-color: var(--secondary-color);
-                border:0;
-                border-bottom: 1;
-            }
-        }
+        text-align: start;
+        color: white;
     }
-    .left {
-        background-color: blue;
-        align-items: flex-start;
+    h4:not(:first-child){
+        margin-top: 1rem;
     }
-
-    .right {
-        background-color: green;
+    h4{
+        font-size: 24px;
     }
+    p{
+        font-size: 18px;
+    }
+    gap: 5px;
+    align-items: center;
+    justify-content: center;
+}
 }
