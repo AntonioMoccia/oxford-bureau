@@ -1,3 +1,4 @@
+'use client';
 import React, { useEffect, useLayoutEffect } from 'react'
 import { AiOutlineCalendar } from 'react-icons/ai'
 import Badge from './badge'
@@ -5,7 +6,7 @@ import SplitType from 'split-type';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 function About() {
-  useLayoutEffect(() => {
+  useEffect(() => {
     const aboutText = new SplitType('.about-text > p')
     gsap.registerPlugin(ScrollTrigger)
 
@@ -16,9 +17,9 @@ function About() {
       scrollTrigger: {
         trigger: '.about-section',
         scrub: true,
-        start: `top`,
-        end: `+=${window.innerHeight / 1.2}`,
-        markers:false
+        start: `top -=${window.innerHeight / 3.5}`,
+        end: `+=${window.innerHeight / 1.20}`,
+        markers:true
       },
       opacity: 1,
       ease: "none",

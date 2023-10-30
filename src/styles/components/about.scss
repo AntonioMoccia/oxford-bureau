@@ -4,13 +4,15 @@
     padding-top:50px;
     .about-text{
         width: 100%;
-        padding:0 20rem;
+        padding:10rem 20rem;
+        background-color: var(--secondary-color);
+        color: white;
         p{
             font-size: 40px ;
             text-transform: lowercase;
             line-height: 60px;
             .char{
-                opacity: 0.01;
+                opacity: 0.2;
             }
         }
     }
@@ -57,7 +59,7 @@
         padding-top:50px;
         .about-text{
             width: 100%;
-            padding:0 5vw;
+            padding:2rem 5vw;
             p{
                 font-size: 7vw;
                 text-transform: lowercase;

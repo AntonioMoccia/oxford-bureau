@@ -6,21 +6,17 @@ import SplitType from 'split-type';
 import Image from 'next/image';
 
 function Hero() {
+    const createAnimation = ()=>{
 
-    useLayoutEffect(() => {
+    }
+    useEffect(() => {
         let title = new SplitType('.hero-left >h1',{types:'lines,words'})
-        const paragraph = new SplitType('.hero-left > p')
-        
+        let paragraph = new SplitType('.hero-left > p',{types:'lines,words,chars'})
         const tl = gsap.timeline()
-        window.addEventListener('resize',()=>{
-            title.revert()
-            title = new SplitType('.hero-left >h1',{types:'lines,words'})
-        })
-
         tl.to('#hero-section .hero-left h1 .word', {
             ease: "power2",
-            y: 0,
-            duration: 0.9
+            y: 1,
+            duration: 1.2
         }).to('#hero-section .hero-left p .char', {
             ease: "power2",
             y: '1.9%',
@@ -31,12 +27,26 @@ function Hero() {
             duration: 1,
             clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)"
         },'<')
-/*         .to('#hero-section .hero-left p .word', {
-            ease: "power2",
-            y: '1.9%',
-            duration: 0.7,
-            stagger:0.05
-        },'<') */
+        window.addEventListener('resize',()=>{
+           
+            tl.to('#hero-section .hero-left h1 .word', {
+                ease: "power2",
+                y: 1,
+                duration: 1.2
+            }).to('#hero-section .hero-left p .char', {
+                ease: "power2",
+                y: '1.9%',
+                duration: 0.4,
+                stagger:0.01
+            },'<').to('.hero-image',{
+                ease: "power2",
+                duration: 1,
+                clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)"
+            },'<')
+        })
+        
+
+
     }, [])
     return (
         <section id='hero-section'>
