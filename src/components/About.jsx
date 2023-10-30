@@ -1,7 +1,33 @@
-import React from 'react'
+import React, { useEffect, useLayoutEffect } from 'react'
 import { AiOutlineCalendar } from 'react-icons/ai'
 import Badge from './badge'
+import SplitType from 'split-type';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 function About() {
+  useLayoutEffect(() => {
+    const aboutText = new SplitType('.about-text > p')
+    gsap.registerPlugin(ScrollTrigger)
+
+    const tl = gsap.timeline()
+
+    gsap.to('.about-text p .char', {
+
+      scrollTrigger: {
+        trigger: '.about-section',
+        scrub: true,
+        start: `top`,
+        end: `+=${window.innerHeight / 1.2}`,
+        markers:false
+      },
+      opacity: 1,
+      ease: "none",
+      stagger: 0.2,
+      
+    })
+
+
+  }, [])
   return (
     <section id='about-section'>
       <div className='about-text'>

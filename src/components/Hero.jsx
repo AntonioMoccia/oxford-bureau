@@ -1,11 +1,48 @@
-import React from 'react'
+'use client';
+import React, { useEffect, useLayoutEffect, useRef } from 'react'
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+import SplitType from 'split-type';
+import Image from 'next/image';
 
 function Hero() {
+
+    useLayoutEffect(() => {
+        let title = new SplitType('.hero-left >h1',{types:'lines,words'})
+        const paragraph = new SplitType('.hero-left > p')
+        
+        const tl = gsap.timeline()
+        window.addEventListener('resize',()=>{
+            title.revert()
+            title = new SplitType('.hero-left >h1',{types:'lines,words'})
+        })
+
+        tl.to('#hero-section .hero-left h1 .word', {
+            ease: "power2",
+            y: 0,
+            duration: 0.9
+        }).to('#hero-section .hero-left p .char', {
+            ease: "power2",
+            y: '1.9%',
+            duration: 0.4,
+            stagger:0.01
+        },'<').to('.hero-image',{
+            ease: "power2",
+            duration: 1,
+            clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)"
+        },'<')
+/*         .to('#hero-section .hero-left p .word', {
+            ease: "power2",
+            y: '1.9%',
+            duration: 0.7,
+            stagger:0.05
+        },'<') */
+    }, [])
     return (
         <section id='hero-section'>
 
             <div className='hero-left'>
-                <h1>
+                <h1> 
                     Lorem Ipsum
                 </h1>
                 <p>
@@ -17,7 +54,9 @@ function Hero() {
             </div>
 
             <div className='hero-right'>
-                <img src='/hero-image.jpg' className='hero-image'/>
+                <div className='hero-image'>
+                    <Image alt='hero image' fill={true} src='/hero-image.jpg'   />
+                </div>
                 {/* <svg className='hero-image' viewBox="0 0 592 610" fill="none">
                     <path d="M592 384.3C592 546.928 436.623 610 267.25 610C97.8763 610 0 546.928 0 384.3C0 221.672 180.57 0 349.943 0C519.317 0 592 221.672 592 384.3Z" fill="url(#pattern0)" />
                     <defs>
