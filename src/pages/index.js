@@ -1,3 +1,4 @@
+'use client';
 import About from '@/components/About'
 import Contact from '@/components/Contact'
 import Hero from '@/components/Hero'
@@ -5,7 +6,10 @@ import NavBar from '@/components/NavBar'
 import Services from '@/components/Services'
 import Head from 'next/head'
 import Image from 'next/image'
+import { useEffect } from 'react'
 export default function Home() {
+
+
   return (
     <>
       <Head>
@@ -14,7 +18,7 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main >
+      <main>
         <NavBar />
         <Hero />
         <About />

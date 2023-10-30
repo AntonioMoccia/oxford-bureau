@@ -10,6 +10,11 @@
     top: 0;
     left: 0;
 
+    .burger-container{
+        display: none;
+    }
+
+
     .nav {
         width: 50%;
         display: flex;
@@ -26,7 +31,8 @@
                 list-style: none;
                 cursor: pointer;
             }
-            li.nav-item:hover:before{
+
+            li.nav-item:hover:before {
                 content: '';
                 background-color: red;
                 color: blue;
@@ -34,6 +40,73 @@
                 position: absolute;
                 height: 1px;
                 bottom: 0;
+            }
+        }
+    }
+}
+
+@media (max-width:600px) {
+    .navbar-container {
+        height: 80px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 5%;
+        background-color: white;
+        position: fixed;
+        width: 100vw;
+        top: 0;
+        right:0;
+        .burger-container{
+            height: 100%;
+            width: auto;
+            color: black;
+            position: absolute;
+            right:5%;
+            top: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .burger{
+                font-size: 7vw;
+            }
+        }
+        .nav {
+            z-index: 39;
+            width: 100vw;
+            left: 0;
+            top: 0;
+            display: flex;
+            justify-content: center;
+            height: calc(100vh - 80px);
+            margin-top: 80px;
+            position: absolute;
+            background-color: white;
+            transform: translateX(100%);
+            .nav-list {
+                width: 50%;
+                display: flex;
+                gap: 10px;
+                justify-content: flex-start;
+                align-items: center;
+                flex-direction: column;
+                padding: 10rem 0;
+
+                li.nav-item {
+                    list-style: none;
+                    cursor: pointer;
+                    font-size: 24px;
+                }
+
+                li.nav-item:hover:before {
+                    content: '';
+                    background-color: red;
+                    color: blue;
+                    width: 100%;
+                    position: absolute;
+                    height: 1px;
+                    bottom: 0;
+                }
             }
         }
     }

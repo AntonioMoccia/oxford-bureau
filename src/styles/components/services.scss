@@ -42,3 +42,46 @@
         }
     }
 }
+@media (max-width:600px){
+    #services{
+        min-height: 100vh;
+        width: 100%;
+        padding: 0 5%;
+        display: flex;
+        flex-direction: column;
+        gap:10vh;
+        .service{
+            display: flex;
+            gap: 2.5em;
+            justify-content: space-between;
+            flex-direction: column;
+            img{
+                width: 100%;
+                border-radius: 5px;
+            }
+            .service-description{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                width: 100%;
+                h1{
+                    font-size: 12vw;
+                }
+                p{
+                    width: 100%;
+                    display: flex;
+                    text-wrap: wrap;
+                    font-size: 6vw;
+                    margin-top:5%
+                }
+            }
+        }
+        .right-img{
+            flex-direction: column;
+            img{
+                width: 100%;
+                border-radius: 5px;
+                }
+        }
+    }
+}

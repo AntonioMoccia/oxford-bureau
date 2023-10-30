@@ -17,7 +17,7 @@ function Hero() {
             </div>
 
             <div className='hero-right'>
-        <img src='/hero-image.jpg' className='hero-image' />
+                <img src='/hero-image.jpg' className='hero-image'/>
                 {/* <svg className='hero-image' viewBox="0 0 592 610" fill="none">
                     <path d="M592 384.3C592 546.928 436.623 610 267.25 610C97.8763 610 0 546.928 0 384.3C0 221.672 180.57 0 349.943 0C519.317 0 592 221.672 592 384.3Z" fill="url(#pattern0)" />
                     <defs>
