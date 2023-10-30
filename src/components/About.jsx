@@ -1,5 +1,5 @@
 'use client';
-import React, { useEffect, useLayoutEffect } from 'react'
+import React, { useEffect } from 'react'
 import { AiOutlineCalendar } from 'react-icons/ai'
 import Badge from './badge'
 import SplitType from 'split-type';
@@ -19,7 +19,7 @@ function About() {
         scrub: true,
         start: `top -=${window.innerHeight / 3.5}`,
         end: `+=${window.innerHeight / 1.20}`,
-        markers:true
+        markers:false
       },
       opacity: 1,
       ease: "none",
