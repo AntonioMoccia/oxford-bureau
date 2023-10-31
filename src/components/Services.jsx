@@ -36,7 +36,7 @@ function Services() {
           ease: "power2",
           duration: 1,
           clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)"
-        }, '-=0.2').to(title, {
+        }, '<').to(title, {
           opacity: 1
         }, '<').to(splitParagraph.words, {
           opacity: 1,
