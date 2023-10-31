@@ -9,8 +9,9 @@
     width: 100%;
     top: 0;
     left: 0;
+    z-index: 50;
 
-    .burger-container{
+    .burger-container {
         display: none;
     }
 
@@ -20,6 +21,7 @@
         display: flex;
         justify-content: flex-end;
         height: 100%;
+        transform: translateX(0%);
 
         .nav-list {
             width: 50%;
@@ -30,22 +32,40 @@
             li.nav-item {
                 list-style: none;
                 cursor: pointer;
+                display: inline-block;
+                position: relative;
             }
 
-            li.nav-item:hover:before {
+            li.nav-item:hover {
+                list-style: none;
+                cursor: pointer;
+                display: inline-block;
+                position: relative;
+                color: var(--secondary-color);
+            }
+
+            li.nav-item::after {
                 content: '';
-                background-color: red;
-                color: blue;
-                width: 100%;
                 position: absolute;
-                height: 1px;
-                bottom: 0;
+                width: 100%;
+                transform: scaleX(0);
+                height: 2px;
+                bottom: -2px;
+                left: 0;
+                background-color: var(--secondary-color);
+                transform-origin: bottom right;
+                transition: transform 0.25s ease-out;
+            }
+
+            li.nav-item:hover::after {
+                transform: scaleX(1);
+                transform-origin: bottom left;
             }
         }
     }
 }
 
-@media (max-width:600px) {
+@media (max-width:700px) {
     .navbar-container {
         height: 80px;
         display: flex;
@@ -57,21 +77,24 @@
         width: 100vw;
         z-index: 50;
         top: 0;
-        right:0;
-        .burger-container{
+        right: 0;
+
+        .burger-container {
             height: 100%;
             width: auto;
             color: black;
             position: absolute;
-            right:5%;
+            right: 5%;
             top: 0;
             display: flex;
             justify-content: center;
             align-items: center;
-            .burger{
+
+            .burger {
                 font-size: 7vw;
             }
         }
+
         .nav {
             z-index: 100;
             width: 100vw;
@@ -84,6 +107,7 @@
             position: absolute;
             background-color: white;
             transform: translateX(100%);
+
             .nav-list {
                 width: 50%;
                 display: flex;
@@ -100,13 +124,7 @@
                 }
 
                 li.nav-item:hover:before {
-                    content: '';
-                    background-color: red;
-                    color: blue;
-                    width: 100%;
-                    position: absolute;
-                    height: 1px;
-                    bottom: 0;
+                   display: none;
                 }
             }
         }

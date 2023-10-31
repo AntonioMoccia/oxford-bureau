@@ -9,7 +9,7 @@ function NavBar() {
         setOpen(!open)
      }
      useEffect(()=>{
-        if(open){
+        if(open || window.innerWidth>=700){
             gsap.to(navBarRef.current,{
                 x:0
             })

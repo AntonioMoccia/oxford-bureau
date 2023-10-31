@@ -15,9 +15,9 @@ function About() {
     gsap.to('.about-text p .char', {
 
       scrollTrigger: {
-        trigger: '.about-section',
+        trigger: '#about-section',
         scrub: true,
-        start: `top -=${window.innerHeight / 3.5}`,
+        start: `top +=${window.innerHeight / 1.5}`,
         end: `+=${window.innerHeight / 1.20}`,
         markers:false
       },
@@ -39,7 +39,7 @@ function About() {
         </p>
       </div>
       <div className='badges-container'>
-
+    
         <Badge
           icon={<AiOutlineCalendar />}
           titolo={'25+'}

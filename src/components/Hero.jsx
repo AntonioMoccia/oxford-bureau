@@ -13,11 +13,11 @@ function Hero() {
         let title = new SplitType('.hero-left >h1',{types:'lines,words'})
         let paragraph = new SplitType('.hero-left > p',{types:'lines,words,chars'})
         const tl = gsap.timeline()
-        tl.to('#hero-section .hero-left h1 .word', {
+        tl.to('#hero .hero-left h1 .word', {
             ease: "power2",
             y: 1,
             duration: 1.2
-        }).to('#hero-section .hero-left p .char', {
+        }).to('#hero .hero-left p .char', {
             ease: "power2",
             y: '1.9%',
             duration: 0.4,
@@ -29,11 +29,11 @@ function Hero() {
         },'<')
         window.addEventListener('resize',()=>{
            
-            tl.to('#hero-section .hero-left h1 .word', {
+            tl.to('#hero .hero-left h1 .word', {
                 ease: "power2",
                 y: 1,
                 duration: 1.2
-            }).to('#hero-section .hero-left p .char', {
+            }).to('#hero .hero-left p .char', {
                 ease: "power2",
                 y: '1.9%',
                 duration: 0.4,
@@ -49,7 +49,7 @@ function Hero() {
 
     }, [])
     return (
-        <section id='hero-section'>
+        <section id='hero'>
 
             <div className='hero-left'>
                 <h1> 
