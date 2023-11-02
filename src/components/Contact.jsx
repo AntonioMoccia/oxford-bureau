@@ -8,26 +8,30 @@ import SplitType from 'split-type'
 function Contact() {
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger, CSSRulePlugin)
-    const container = document.querySelector('#contacts')
-    container.querySelectorAll('label').forEach(label=>{
-      const labelSplit = new SplitType(label)
-    })
-  
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: '#contacts',
         toggleActions: "restart none none reset"
-      }
+        
+        },
+      stagger: 0.2,
+    
     });
     tl.to('.underline', {
       scaleX: 1,
       duration: 0.9,
-      stagger: 0.2,
       
-    }).to('.char',{
-      y:0,
-      
-    },'-=0.8')
+    })
+    const container = document.querySelector('#contacts')
+    container.querySelectorAll('label').forEach(label=>{
+      const labelSplit = new SplitType(label)
+      tl.to(labelSplit.chars,{
+        y:0,
+        stagger:0.06        
+      },'<')
+    })
+  
+
 
   }, [])
   return (

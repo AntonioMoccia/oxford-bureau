@@ -147,7 +147,14 @@
           color: white;
           height: 100%;
           overflow: hidden;
-        
+          .line{
+            .word{
+              overflow: hidden;
+              .char{
+                transform: translateY(-100%);
+              }
+            }
+          }
         }
 
         label:not(:first-child) {
@@ -205,7 +212,7 @@
       p,
       h4 {
         width: 50%;
-        text-align: center;
+        text-align: left;
         color: white;
       }
 
