@@ -4,6 +4,7 @@ import gsap from 'gsap'
 import { CSSRulePlugin } from 'gsap/dist/CSSRulePlugin'
 
 import SplitType from 'split-type'
+import InputField from './InputField'
 
 function Contact() {
   useEffect(() => {
@@ -12,25 +13,25 @@ function Contact() {
       scrollTrigger: {
         trigger: '#contacts',
         toggleActions: "restart none none reset"
-        
-        },
-      stagger: 0.2,
-    
+      },
+
+
     });
     tl.to('.underline', {
       scaleX: 1,
       duration: 0.9,
-      
+      stagger: 0.2
+
     })
     const container = document.querySelector('#contacts')
-    container.querySelectorAll('label').forEach(label=>{
+    container.querySelectorAll('label').forEach(label => {
       const labelSplit = new SplitType(label)
-      tl.to(labelSplit.chars,{
-        y:0,
-        stagger:0.06        
-      },'<')
+      tl.to(labelSplit.chars, {
+        y: 0,
+        stagger: 0.06
+      }, '<')
     })
-  
+
 
 
   }, [])
@@ -38,21 +39,21 @@ function Contact() {
     <section id='contacts'>
       <div className='section-contacts left'>
         <form className='contact-form'>
-          <div className='input-field'>
-            <label htmlFor='email'>Email</label>
-            <input type='text' id='email' />
-            <div className='underline' />
-          </div>
-          <div className='input-field' >
-            <label htmlFor='nome'>Nome e cognome</label>
-            <input type='text' id='nome' />
-            <div className='underline' />
-          </div>
-          <div className='input-field'>
-            <label htmlFor='testo'>Testo</label>
-            <textarea id='testo' />
-            <div className='underline' /> 
-          </div>
+          <InputField
+            label={'Email'}
+            type={'text'}
+            htmlFor={'email'}
+          />
+          <InputField
+            label={'Nome e cognome'}
+            type={'text'}
+            htmlFor={'nome'}
+          />
+          <InputField
+            label={'Testo'}
+            type={'text'}
+            htmlFor={'testo'}
+          />
           <button>Invia</button>
         </form>
       </div>

@@ -7,7 +7,24 @@ import Services from '@/components/Services'
 import Head from 'next/head'
 import Image from 'next/image'
 import { useEffect } from 'react'
+import Lenis from '@studio-freight/lenis'
 export default function Home() {
+  useEffect(()=>{
+    const lenis = new Lenis({
+      smoothTouch:true,
+      smoothWheel:true
+    })
+
+    lenis.on('scroll', (e) => {
+      console.log(e)
+    })
+    
+    function raf(time) {
+      lenis.raf(time)
+      requestAnimationFrame(raf)
+    }
+    requestAnimationFrame(raf)
+  },[])
 
   return (
     <>
