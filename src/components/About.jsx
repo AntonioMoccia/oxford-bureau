@@ -17,7 +17,7 @@ function About() {
       scrollTrigger: {
         trigger: '#about-section',
         scrub: true,
-        start: `top +=${window.innerHeight / 1.5}`,
+        start: `top +=${window.innerHeight / 1.7}`,
         end: `+=${window.innerHeight / 1.20}`,
         markers:false
       },

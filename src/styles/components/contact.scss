@@ -30,6 +30,14 @@
 
         label {
           color: white;
+          overflow: hidden;
+          height: 100%;
+          .word{
+            overflow: hidden;
+            .char{
+              transform: translateY(-100%);
+            }
+          }
         }
 
         .input-field:not(:first-child) {
@@ -48,14 +56,12 @@
 
         }
 
-        &::after {
-          content: ' ';
+        .underline {
           width: 100%;
           height: 1px;
           background-color: white;
           transform-origin: left;
-          transform: scaleX(1);
-          opacity: 0;
+          transform: scaleX(0);
         }
       }
 
@@ -139,6 +145,9 @@
 
         label {
           color: white;
+          height: 100%;
+          overflow: hidden;
+        
         }
 
         label:not(:first-child) {
