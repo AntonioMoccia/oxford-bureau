@@ -12,11 +12,11 @@ export default function Home() {
   useEffect(()=>{
     const lenis = new Lenis({
       smoothTouch:true,
-      smoothWheel:true
+      smoothWheel:true,
+      touchMultiplier:2
     })
 
     lenis.on('scroll', (e) => {
-      console.log(e)
     })
     
     function raf(time) {
