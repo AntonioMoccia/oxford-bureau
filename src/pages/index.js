@@ -1,3 +1,4 @@
+
 import About from '@/components/About'
 import Contact from '@/components/Contact'
 import Hero from '@/components/Hero'
@@ -10,23 +11,23 @@ import Lenis from '@studio-freight/lenis'
 import { createClient } from '@/prismicio';
 
 
-export const getServerSideProps = async (context) => {
+export const getServerSideProps = (async (context) => {
   const prismic = await createClient()
 
   const result = await prismic.getByType('homepage')
 
   return {
     props: {
-      data: result
+      data: result.results[0].data.slices
     }
   }
-}
+})
 
 
 export default function Home({ data }) {
 
   function getSliceByName(data, name) {
-    return data.results[0].data.slices.filter(item => {
+    return data.filter(item => {
       return item.slice_type == name
     })[0];
   }
@@ -60,8 +61,8 @@ export default function Home({ data }) {
       </Head>
       <main>
         <NavBar />
-      {/*   <Hero data={getSliceByName(data, 'hero')} />
-        <About data={getSliceByName(data, 'about')}  /> */}
+        <Hero data={getSliceByName(data, 'hero')} />
+        <About data={getSliceByName(data, 'about')}  />
         <Services />
         <Contact />
       </main>
