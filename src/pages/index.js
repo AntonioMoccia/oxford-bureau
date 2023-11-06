@@ -10,7 +10,7 @@ import Lenis from '@studio-freight/lenis'
 import { createClient } from '@/prismicio';
 
 
-export const getServerSideProps = (async (context) => {
+export const getServerSideProps = async (context) => {
   const prismic = await createClient()
 
   const result = await prismic.getByType('homepage')
@@ -20,7 +20,7 @@ export const getServerSideProps = (async (context) => {
       data: result.results[0].data.slices
     }
   }
-})
+}
 
 
 export default function Home({ data }) {
@@ -61,7 +61,7 @@ export default function Home({ data }) {
       <main>
         <NavBar />
         <Hero data={getSliceByName(data, 'hero')} />
-        <About data={getSliceByName(data, 'about')}  />
+       
         <Services />
         <Contact />
       </main>
