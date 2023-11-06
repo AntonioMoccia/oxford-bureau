@@ -4,7 +4,7 @@ import Badge from './badge'
 import SplitType from 'split-type';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
-import {PrismicRichText} from '@prismicio/react'
+
 /**
  * @typedef {import("@prismicio/client").Content.AboutSlice} AboutSlice
  * @typedef {import("@prismicio/react").SliceComponentProps<AboutSlice>} AboutProps
@@ -45,7 +45,7 @@ const About = ({ slice }) => {
     >
       <div className='about-text'>
         <p>
-        <PrismicRichText field={slice.primary.about_text} />
+          {slice.primary.about_text[0].text}
          </p>
       </div>
       <div className='badges-container'>
