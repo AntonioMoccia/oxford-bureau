@@ -17,7 +17,7 @@ export const getServerSideProps = async (context) => {
 
   return {
     props: {
-      data: result.results[0].data.slices
+      data: result
     }
   }
 }
@@ -26,7 +26,7 @@ export const getServerSideProps = async (context) => {
 export default function Home({ data }) {
 
   function getSliceByName(data, name) {
-    return data.filter(item => {
+    return data.results[0].data.slices.filter(item => {
       return item.slice_type == name
     })[0];
   }
