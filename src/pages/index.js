@@ -8,23 +8,48 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { useEffect } from 'react'
 import Lenis from '@studio-freight/lenis'
-export default function Home() {
-  useEffect(()=>{
-    const lenis = new Lenis({
-      smoothTouch:true,
-      smoothWheel:true,
-      touchMultiplier:2
+import { createClient } from '@/prismicio';
+
+
+export const getServerSideProps = (async (context) => {
+  const prismic = await createClient()
+
+  const result = await prismic.getByType('homepage')
+
+  return {
+    props: {
+      data: result.results[0].data.slices
+    }
+  }
+})
+
+
+export default function Home({ data }) {
+
+  function getSliceByName(data, name) {
+    return data.filter(item => {
+      return item.slice_type == name
+    })[0];
+  }
+
+
+  useEffect(() => {
+
+/*     const lenis = new Lenis({
+      smoothTouch: true,
+      smoothWheel: true,
+      touchMultiplier: 2
     })
 
     lenis.on('scroll', (e) => {
     })
-    
+
     function raf(time) {
       lenis.raf(time)
       requestAnimationFrame(raf)
     }
-    requestAnimationFrame(raf)
-  },[])
+    requestAnimationFrame(raf) */
+  }, [])
 
   return (
     <>
@@ -36,8 +61,8 @@ export default function Home() {
       </Head>
       <main>
         <NavBar />
-        <Hero />
-        <About />
+        <Hero data={getSliceByName(data, 'hero')} />
+        <About data={getSliceByName(data, 'about')}  />
         <Services />
         <Contact />
       </main>

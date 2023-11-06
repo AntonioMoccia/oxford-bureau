@@ -1,0 +1,20 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"about_text": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Non est anim labore pariatur deserunt sint qui officia."
+						}
+					}
+				]
+			}
+		},
+		"items": []
+	}
+]

@@ -1,0 +1,49 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"hero_image": {
+				"origin": {
+					"id": "main",
+					"url": "https://images.unsplash.com/photo-1525547719571-a2d4ac8945e2",
+					"width": 3648,
+					"height": 4560
+				},
+				"url": "https://images.unsplash.com/photo-1525547719571-a2d4ac8945e2",
+				"width": 3648,
+				"height": 4560,
+				"edit": {
+					"zoom": 1,
+					"crop": {
+						"x": 0,
+						"y": 0
+					},
+					"background": "transparent"
+				},
+				"credits": null,
+				"alt": null,
+				"__TYPE__": "ImageContent",
+				"thumbnails": {}
+			},
+			"hero_title": {
+				"__TYPE__": "FieldContent",
+				"type": "Text",
+				"value": "lorem ipsum"
+			},
+			"hero_paragraph": {
+				"__TYPE__": "FieldContent",
+				"type": "Text",
+				"value": "lorem ipsum dolor sit amet. ut dignissimos fugit aut."
+			},
+			"hero_button": {
+				"__TYPE__": "LinkContent",
+				"value": {
+					"__TYPE__": "ExternalLink",
+					"url": "#contattaci"
+				}
+			}
+		},
+		"items": []
+	}
+]

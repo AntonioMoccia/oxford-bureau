@@ -5,10 +5,11 @@ import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import SplitType from 'split-type';
 import Image from 'next/image';
 
-function Hero() {
-    const createAnimation = ()=>{
+function Hero({data}) {
 
-    }
+    useEffect(()=>{
+        console.log(data);
+    },[data])
     useEffect(() => {
         let title = new SplitType('.hero-left >h1',{types:'lines,words'})
         let paragraph = new SplitType('.hero-left > p',{types:'lines,words,chars'})
@@ -53,10 +54,10 @@ function Hero() {
 
             <div className='hero-left'>
                 <h1> 
-                    Lorem Ipsum
+                {data.primary.hero_title}
                 </h1>
                 <p>
-                    Lorem ipsum dolor sit amet. Ut dignissimos fugit aut.
+                    {data.primary.hero_paragraph}
                 </p>
                 <div className='hero-contact-button'>
                     Contattaci
@@ -65,7 +66,7 @@ function Hero() {
 
             <div className='hero-right'>
                 <div className='hero-image'>
-                    <Image alt='hero image' fill={true} src='/hero-image.jpg'   />
+                    <Image alt='hero image' fill={true} src={data.primary.hero_image.url}  />
                 </div>
                 {/* <svg className='hero-image' viewBox="0 0 592 610" fill="none">
                     <path d="M592 384.3C592 546.928 436.623 610 267.25 610C97.8763 610 0 546.928 0 384.3C0 221.672 180.57 0 349.943 0C519.317 0 592 221.672 592 384.3Z" fill="url(#pattern0)" />

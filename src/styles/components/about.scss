@@ -1,29 +1,36 @@
-#about-section{
-    min-height: calc(100vh - 80px);  
+#about-section {
+    min-height: calc(100vh - 80px);
     width: 100%;
-    padding-top:50px;
-    .about-text{
+    padding-top: 50px;
+
+    .about-text {
         width: 100%;
-        padding:10rem 20rem;
+        padding: 10rem 20rem;
         background-color: var(--secondary-color);
-        color: white;
-        p{
-            font-size: 40px ;
+        color: rgb(207, 192, 192);
+
+        p {
+            font-size: 40px;
             text-transform: lowercase;
             line-height: 60px;
-            .char{
+
+
+            .char {
                 opacity: 0.2;
+
             }
         }
     }
-    .badges-container{
+
+    .badges-container {
         width: 100%;
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        gap:2em;
-        padding:5% 0;
-        .badge{
+        gap: 2em;
+        padding: 5% 0;
+
+        .badge {
             border-radius: 20px;
             border: solid 0.5px black;
             height: 160px;
@@ -33,47 +40,53 @@
             justify-content: center;
             align-items: center;
             flex-direction: column;
-            gap:10px;
-            .icon{
+            gap: 10px;
+
+            .icon {
                 width: 100%;
                 font-size: 40px;
                 display: flex;
                 justify-content: center;
                 align-items: center;
             }
-            h1{
+
+            h1 {
                 color: var(--secondary-color);
                 font-weight: bold;
                 font-size: 35px;
-            }   
-            p{
-
             }
+
+            p {}
         }
     }
 }
-@media (max-width:700px){
-    #about-section{
-        min-height: calc(100vh - 80px);  
+
+@media (max-width:700px) {
+    #about-section {
+        min-height: calc(100vh - 80px);
         width: 100vw;
-        padding-top:50px;
-        .about-text{
+        padding-top: 50px;
+
+        .about-text {
             width: 100%;
-            padding:2rem 5vw;
-            p{
+            padding: 2rem 5vw;
+
+            p {
                 font-size: 7vw;
                 text-transform: lowercase;
                 line-height: 35px;
             }
         }
-        .badges-container{
+
+        .badges-container {
             width: 100%;
             display: flex;
             flex-wrap: wrap;
             justify-content: flex-start;
-            gap:4vw;
-            padding:10% 12vw;
-            .badge{
+            gap: 4vw;
+            padding: 10% 12vw;
+
+            .badge {
                 border-radius: 20px;
                 border: solid 0.5px black;
                 height: 35vw;
@@ -83,23 +96,24 @@
                 justify-content: center;
                 align-items: center;
                 flex-direction: column;
-                gap:2vw;
-                .icon{
+                gap: 2vw;
+
+                .icon {
                     width: 100%;
                     font-size: 10vw;
                     display: flex;
                     justify-content: center;
                     align-items: center;
                 }
-                h1{
+
+                h1 {
                     color: var(--secondary-color);
                     font-weight: bold;
                     font-size: 12vw
-                }   
-                p{
-    
                 }
+
+                p {}
             }
         }
     }
-} 
+}
