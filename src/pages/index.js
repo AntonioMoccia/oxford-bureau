@@ -8,7 +8,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { useEffect, useState } from 'react'
 import Lenis from '@studio-freight/lenis'
-import { client } from '../../prismic';
+import { client } from '../prismic';
 
 
 export default function Home({ page }) {
