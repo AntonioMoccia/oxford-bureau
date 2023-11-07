@@ -5,10 +5,9 @@ import Badge from './badge'
 import SplitType from 'split-type';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
-import { PrismicRichText } from '@prismicio/react'
+
 function About({data}) {
   useEffect(() => {
-    console.log(data.primary.about_text);
     const aboutText = new SplitType('.about-text > p')
     gsap.registerPlugin(ScrollTrigger)
 

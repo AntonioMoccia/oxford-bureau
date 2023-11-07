@@ -11,9 +11,19 @@ import Lenis from '@studio-freight/lenis'
 import { createClient } from '@/prismicio';
 
 
-export default function Home() {
 
-  const [data, setData] = useState(null)
+export async function getStaticProps({ params, previewData }) {
+  const client = createClient({ previewData })
+
+  const page = await client.getByType('homepage')
+
+  return {
+    props: { data:[...page.results[0].data.slices] },
+  }
+}
+
+export default function Home({data}) {
+
 
   function getSliceByName(data, name) {
     return data.filter(item => {
@@ -23,10 +33,7 @@ export default function Home() {
 
 
   useEffect(() => {
-   createClient().getByType('homepage').then((result)=>{
-    console.log(result);
-     setData(result.results[0].data.slices)
-   })
+
 
     /*     const lenis = new Lenis({
           smoothTouch: true,
@@ -54,8 +61,8 @@ export default function Home() {
       </Head>
       <main>
         <NavBar />
-        {/* <Hero data={getSliceByName(data, 'hero')} />
-        <About data={getSliceByName(data, 'about')} /> */}
+        <Hero data={getSliceByName(data,'hero')} />
+        <About  data={getSliceByName(data,'about')} />
         <Services />
         <Contact />
       </main>
