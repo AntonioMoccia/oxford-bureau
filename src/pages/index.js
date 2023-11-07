@@ -6,25 +6,32 @@ import NavBar from '@/components/NavBar'
 import Services from '@/components/Services'
 import Head from 'next/head'
 import Image from 'next/image'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import Lenis from '@studio-freight/lenis'
 import { createClient } from '@/prismicio';
 
-
-export const getServerSideProps = (async (context) => {
+export async function getStaticProps() {
   const prismic = await createClient()
 
   const result = await prismic.getByType('homepage')
-
   return {
     props: {
       data: result.results[0].data.slices
     }
   }
-})
+}
+
+async function getData() {
+  const prismic = await createClient()
+  const result = await prismic.getByType('homepage')
+
+
+  return result
+}
 
 
 export default function Home({ data }) {
+
 
   function getSliceByName(data, name) {
     return data.filter(item => {
@@ -34,21 +41,20 @@ export default function Home({ data }) {
 
 
   useEffect(() => {
-
-/*     const lenis = new Lenis({
-      smoothTouch: true,
-      smoothWheel: true,
-      touchMultiplier: 2
-    })
-
-    lenis.on('scroll', (e) => {
-    })
-
-    function raf(time) {
-      lenis.raf(time)
-      requestAnimationFrame(raf)
-    }
-    requestAnimationFrame(raf) */
+    /*     const lenis = new Lenis({
+          smoothTouch: true,
+          smoothWheel: true,
+          touchMultiplier: 2
+        })
+    
+        lenis.on('scroll', (e) => {
+        })
+    
+        function raf(time) {
+          lenis.raf(time)
+          requestAnimationFrame(raf)
+        }
+        requestAnimationFrame(raf) */
   }, [])
 
   return (
@@ -61,10 +67,13 @@ export default function Home({ data }) {
       </Head>
       <main>
         <NavBar />
+        {data.length > 0 && (<>
         <Hero data={getSliceByName(data, 'hero')} />
-        <About data={getSliceByName(data, 'about')}  />
+        <About data={getSliceByName(data, 'about')} />
         <Services />
         <Contact />
+        </>)
+        }
       </main>
     </>
   )
