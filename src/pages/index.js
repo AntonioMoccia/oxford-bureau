@@ -60,11 +60,11 @@ export default function Home({page}) {
   )
 }
 
-export async function getStaticProps({ params, previewData }) {
+export async function getServerSideProps({ previewData }) {
   const client = createClient({ previewData });
-
+  console.log(previewData);
   const page = await client.getByType("homepage");
-
+  
   return {
     props: { page:page.results[0].data.slices },
   };
