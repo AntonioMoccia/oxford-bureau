@@ -37,12 +37,12 @@ export const createClient = (config = {}) => {
         : { next: { revalidate: 5 } }, */
     ...config,
   });
-/* 
+
   prismicNext.enableAutoPreviews({
     client,
     previewData: config.previewData,
     req: config.req,
-  }); */
+  });
 
   return client;
 };
