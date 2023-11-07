@@ -11,21 +11,11 @@ import Lenis from '@studio-freight/lenis'
 import { createClient } from '@/prismicio';
 
 
-
-export async function getStaticProps({ params, previewData }) {
-  const client = createClient({ previewData })
-
-  const page = await client.getByType('homepage')
-
-  return {
-    props: { data:[...page.results[0].data.slices] },
-  }
-}
-
-export default function Home({data}) {
+export default function Home({page}) {
 
 
   function getSliceByName(data, name) {
+    console.log(data);
     return data.filter(item => {
       return item.slice_type == name
     })[0];
@@ -61,11 +51,21 @@ export default function Home({data}) {
       </Head>
       <main>
         <NavBar />
-        <Hero data={getSliceByName(data,'hero')} />
-        <About  data={getSliceByName(data,'about')} />
+        <Hero data={getSliceByName(page,'hero')} />
+        <About  data={getSliceByName(page,'about')} />
         <Services />
         <Contact />
       </main>
     </>
   )
+}
+
+export async function getStaticProps({ params, previewData }) {
+  const client = createClient({ previewData });
+
+  const page = await client.getByType("homepage");
+
+  return {
+    props: { page:page.results[0].data.slices },
+  };
 }
