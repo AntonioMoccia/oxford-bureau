@@ -8,10 +8,10 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { useEffect, useState } from 'react'
 import Lenis from '@studio-freight/lenis'
-import { createClient } from '@/prismicio';
+import { client } from '../../prismic';
 
 
-export default function Home({page}) {
+export default function Home({ page }) {
 
 
   function getSliceByName(data, name) {
@@ -51,8 +51,8 @@ export default function Home({page}) {
       </Head>
       <main>
         <NavBar />
-        <Hero data={getSliceByName(page,'hero')} />
-        <About  data={getSliceByName(page,'about')} />
+        <Hero data={getSliceByName(page, 'hero')} />
+        <About data={getSliceByName(page, 'about')} />
         <Services />
         <Contact />
       </main>
@@ -60,11 +60,11 @@ export default function Home({page}) {
   )
 }
 
-export async function getServerSideProps({ previewData }) {
-  const client = createClient({ previewData });
+export async function getServerSideProps() {
+
   const page = await client.getSingle("homepage");
- 
+  console.log(page);
   return {
-    props: { page:page.data.slices},
+    props: { page: page.data.slices },
   };
 }
