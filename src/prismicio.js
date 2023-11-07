@@ -1,12 +1,11 @@
 import * as prismic from "@prismicio/client";
 import * as prismicNext from "@prismicio/next";
 import config from "../slicemachine.config.json";
-import sm from '../sm.json'
+
 /**
  * The project's Prismic repository name.
  */
-export const repositoryName = prismic.getRepositoryName(sm.apiEndpoint)
-
+export const repositoryName = prismic.getRepositoryName('https://oxfordbureau.cdn.prismic.io/api/v2')
 /**
  * A list of Route Resolver objects that define how a document's `url` field is resolved.
  *
