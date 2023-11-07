@@ -10,28 +10,10 @@ import { useEffect, useState } from 'react'
 import Lenis from '@studio-freight/lenis'
 import { createClient } from '@/prismicio';
 
-export async function getStaticProps() {
-  const prismic = await createClient()
 
-  const result = await prismic.getByType('homepage')
-  return {
-    props: {
-      data: result.results[0].data.slices
-    }
-  }
-}
+export default function Home() {
 
-async function getData() {
-  const prismic = await createClient()
-  const result = await prismic.getByType('homepage')
-
-
-  return result
-}
-
-
-export default function Home({ data }) {
-
+  const [data, setData] = useState(null)
 
   function getSliceByName(data, name) {
     return data.filter(item => {
@@ -41,6 +23,11 @@ export default function Home({ data }) {
 
 
   useEffect(() => {
+   createClient().getByType('homepage').then((result)=>{
+    console.log(result);
+     setData(result.results[0].data.slices)
+   })
+
     /*     const lenis = new Lenis({
           smoothTouch: true,
           smoothWheel: true,
@@ -67,13 +54,10 @@ export default function Home({ data }) {
       </Head>
       <main>
         <NavBar />
-        {data.length > 0 && (<>
-        <Hero data={getSliceByName(data, 'hero')} />
-        <About data={getSliceByName(data, 'about')} />
+        {/* <Hero data={getSliceByName(data, 'hero')} />
+        <About data={getSliceByName(data, 'about')} /> */}
         <Services />
         <Contact />
-        </>)
-        }
       </main>
     </>
   )
