@@ -10,19 +10,20 @@
     "slicemachine": "start-slicemachine"
   },
   "dependencies": {
-    "react": "^18",
-    "react-dom": "^18",
-    "next": "14.0.1",
-    "react-icons": "^4.11.0",
-    "split-type": "^0.3.4",
     "@prismicio/client": "^7.3.1",
     "@prismicio/next": "^1.4.0",
     "@prismicio/react": "^2.7.3",
     "@studio-freight/lenis": "^1.0.27",
     "framer-motion": "^10.16.4",
-    "gsap": "^3.12.2"
+    "gsap": "^3.12.2",
+    "next": "14.0.1",
+    "react": "^18",
+    "react-dom": "^18",
+    "react-icons": "^4.11.0",
+    "split-type": "^0.3.4"
   },
   "devDependencies": {
+    "@netlify/plugin-nextjs": "^4.41.1",
     "@slicemachine/adapter-next": "^0.3.23",
     "sass": "^1.69.4",
     "slice-machine-ui": "^1.19.1"
