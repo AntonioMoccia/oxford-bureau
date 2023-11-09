@@ -1,3 +1,4 @@
+'use client'
 import React, { useEffect } from 'react'
 import ServiceLeft from './Service/ServiceLeft'
 import ServiceRight from './Service/ServiceRight'

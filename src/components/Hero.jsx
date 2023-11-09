@@ -1,3 +1,4 @@
+'use client'
 import React, { useEffect,  useRef } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
@@ -6,9 +7,6 @@ import Image from 'next/image';
 
 function Hero({data}) {
 
-    useEffect(()=>{
-        console.log(data);
-    },[data])
     useEffect(() => {
         let title = new SplitType('.hero-left >h1',{types:'lines,words'})
         let paragraph = new SplitType('.hero-left > p',{types:'lines,words,chars'})

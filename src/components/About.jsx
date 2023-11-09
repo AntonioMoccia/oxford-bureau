@@ -1,3 +1,4 @@
+'use client'
 import React, { useEffect } from 'react'
 import { AiOutlineCalendar } from 'react-icons/ai'
 import Badge from './badge'
