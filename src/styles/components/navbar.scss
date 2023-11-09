@@ -4,7 +4,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 0 5%;
-    background-color: white;
+    background-color: var(--background-body-color);
     position: fixed;
     width: 100%;
     top: 0;
@@ -34,6 +34,7 @@
                 cursor: pointer;
                 display: inline-block;
                 position: relative;
+                color: var(--secondary-color-text);
             }
 
             li.nav-item:hover {

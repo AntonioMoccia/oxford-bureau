@@ -10,7 +10,27 @@
       "docURL": "...",
       "version": "initial",
       "description": "Default",
-      "imageUrl": ""
+      "imageUrl": "",
+      "primary": {},
+      "items": {
+        "service_image": {
+          "type": "Image",
+          "config": {
+            "label": "service_image",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "text_service": {
+          "type": "StructuredText",
+          "config": {
+            "label": "text_service",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        }
+      }
     }
   ]
 }

@@ -8,11 +8,10 @@ import Image from 'next/image';
 function Hero({data}) {
 
     useEffect(() => {
-        let title = new SplitType('.hero-left >h1',{types:'lines,words'})
+        let title = new SplitType('.hero-left >h1',{types:'words'})
         let paragraph = new SplitType('.hero-left > p',{types:'lines,words,chars'})
         const tl = gsap.timeline()
         tl.to('#hero .hero-left h1 .word', {
-            ease: "power2",
             y: 1,
             duration: 1.2
         }).to('#hero .hero-left p .char', {

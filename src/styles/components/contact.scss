@@ -84,6 +84,7 @@
       background-color: white;
       border: none;
       border-radius: 2px;
+      cursor: pointer;
     }
   }
 
@@ -122,6 +123,7 @@
   #contacts {
     width: 100%;
     height: auto;
+    min-height: auto;
     display: flex;
     flex-direction: column;
     justify-content: center;

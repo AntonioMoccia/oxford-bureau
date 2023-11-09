@@ -13,7 +13,7 @@ import '../styles/index.scss'
 function getSliceByName(data, name) {
   return data.filter(item => {
     return item.slice_type == name
-  })[0];
+  });
 }
 
 
@@ -21,7 +21,7 @@ function getSliceByName(data, name) {
 export const getData = cache(async (id) => {
   const client = createClient()
   const page = await client.getSingle("homepage");
-  console.log(page);
+  console.log(page.data.slices);
   return page.data.slices
 })
 
@@ -29,7 +29,6 @@ export const getData = cache(async (id) => {
 export default async function Home() {
 
   const page = await getData()
-
 
   return (
     <>
@@ -41,9 +40,9 @@ export default async function Home() {
       </Head>
       <main>
         <NavBar />
-        <Hero data={getSliceByName(page, 'hero')} />
-        <About data={getSliceByName(page, 'about')} />
-        <Services />
+        <Hero data={getSliceByName(page, 'hero')[0]} />
+        <About data={getSliceByName(page, 'about')[0]} />
+        <Services data={getSliceByName(page, 'service')}  />
         <Contact />
       </main>
     </>

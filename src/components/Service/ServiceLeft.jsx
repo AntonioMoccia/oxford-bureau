@@ -1,12 +1,16 @@
-import React from 'react'
+'use client'
+import { PrismicRichText } from '@prismicio/react';
+import React, { useEffect } from 'react'
 
-function ServiceLeft() {
+function ServiceLeft({ service }) {
+    useEffect(() => {
+        console.log(service?.items);
+    }, [])
     return (
         <div className='service left-img'>
-            <img src='/service1.jpg' />
+            <img src={service?.items[0].service_image.url} />
             <div className='service-description'>
-                <h1>Lorem ipsum</h1>
-                <p>Lorem ipsum dolor sit amet consectetur. Accumsan mi vivamus tellus massa cras. A purus venenatis nunc ornare nunc. Nulla eget malesuada elementum in velit pellentesque. Sit augue nunc aliquet sed diam urna.</p>
+                <PrismicRichText field={ service?.items[0].text_service } />
             </div>
         </div>
     )

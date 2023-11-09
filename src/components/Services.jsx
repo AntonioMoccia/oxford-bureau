@@ -6,7 +6,7 @@ import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 import SplitType from 'split-type'
 
-function Services() {
+function Services({ data }) {
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger)
 
@@ -47,9 +47,15 @@ function Services() {
   }, [])
   return (
     <section id='services'>
-      <ServiceLeft />
-      <ServiceRight />
-      <ServiceLeft />
+
+      {
+        data.map((service, i) => {
+          return i % 2 == 0 ? <ServiceLeft key={i} service={service} /> : <ServiceRight />
+        })
+      }
+
+      {/*       <ServiceRight />
+      <ServiceLeft /> */}
     </section>
   )
 }

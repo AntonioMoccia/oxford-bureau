@@ -8,7 +8,9 @@
         padding: 10rem 20rem;
         background-color: var(--secondary-color);
         color: rgb(207, 192, 192);
-
+        strong{
+            color: var(--btn-secondary-color) ;
+        }
         p {
             font-size: 40px;
             text-transform: lowercase;

@@ -4,49 +4,49 @@ import type * as prismic from "@prismicio/client";
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
-type HomeDocumentDataSlicesSlice = never;
+type HomepageDocumentDataSlicesSlice = ServiceSlice | HeroSlice | AboutSlice;
 
 /**
- * Content for home documents
+ * Content for homepage documents
  */
-interface HomeDocumentData {
+interface HomepageDocumentData {
   /**
-   * Slice Zone field in *home*
+   * Slice Zone field in *homepage*
    *
    * - **Field Type**: Slice Zone
    * - **Placeholder**: *None*
-   * - **API ID Path**: home.slices[]
+   * - **API ID Path**: homepage.slices[]
    * - **Tab**: Main
    * - **Documentation**: https://prismic.io/docs/field#slices
    */
-  slices: prismic.SliceZone<HomeDocumentDataSlicesSlice> /**
-   * Meta Description field in *home*
+  slices: prismic.SliceZone<HomepageDocumentDataSlicesSlice> /**
+   * Meta Description field in *homepage*
    *
    * - **Field Type**: Text
    * - **Placeholder**: A brief summary of the page
-   * - **API ID Path**: home.meta_description
+   * - **API ID Path**: homepage.meta_description
    * - **Tab**: SEO & Metadata
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */;
   meta_description: prismic.KeyTextField;
 
   /**
-   * Meta Image field in *home*
+   * Meta Image field in *homepage*
    *
    * - **Field Type**: Image
    * - **Placeholder**: *None*
-   * - **API ID Path**: home.meta_image
+   * - **API ID Path**: homepage.meta_image
    * - **Tab**: SEO & Metadata
    * - **Documentation**: https://prismic.io/docs/field#image
    */
   meta_image: prismic.ImageField<never>;
 
   /**
-   * Meta Title field in *home*
+   * Meta Title field in *homepage*
    *
    * - **Field Type**: Text
    * - **Placeholder**: A title of the page used for social media and search engines
-   * - **API ID Path**: home.meta_title
+   * - **API ID Path**: homepage.meta_title
    * - **Tab**: SEO & Metadata
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
@@ -54,18 +54,40 @@ interface HomeDocumentData {
 }
 
 /**
- * home document from Prismic
+ * homepage document from Prismic
  *
- * - **API ID**: `home`
+ * - **API ID**: `homepage`
  * - **Repeatable**: `false`
  * - **Documentation**: https://prismic.io/docs/custom-types
  *
  * @typeParam Lang - Language API ID of the document.
  */
-export type HomeDocument<Lang extends string = string> =
-  prismic.PrismicDocumentWithoutUID<Simplify<HomeDocumentData>, "home", Lang>;
+export type HomepageDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<
+    Simplify<HomepageDocumentData>,
+    "homepage",
+    Lang
+  >;
 
-export type AllDocumentTypes = HomeDocument;
+interface ServicesDocumentData {}
+
+/**
+ * services document from Prismic
+ *
+ * - **API ID**: `services`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type ServicesDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<
+    Simplify<ServicesDocumentData>,
+    "services",
+    Lang
+  >;
+
+export type AllDocumentTypes = HomepageDocument | ServicesDocument;
 
 /**
  * Primary content in *About → Primary*
@@ -182,6 +204,31 @@ type HeroSliceVariation = HeroSliceDefault;
 export type HeroSlice = prismic.SharedSlice<"hero", HeroSliceVariation>;
 
 /**
+ * Primary content in *Service → Items*
+ */
+export interface ServiceSliceDefaultItem {
+  /**
+   * service_image field in *Service → Items*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: service.items[].service_image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  service_image: prismic.ImageField<never>;
+
+  /**
+   * text_service field in *Service → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: service.items[].text_service
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  text_service: prismic.RichTextField;
+}
+
+/**
  * Default variation for Service Slice
  *
  * - **API ID**: `default`
@@ -191,7 +238,7 @@ export type HeroSlice = prismic.SharedSlice<"hero", HeroSliceVariation>;
 export type ServiceSliceDefault = prismic.SharedSliceVariation<
   "default",
   Record<string, never>,
-  never
+  Simplify<ServiceSliceDefaultItem>
 >;
 
 /**
@@ -211,36 +258,6 @@ export type ServiceSlice = prismic.SharedSlice<
   ServiceSliceVariation
 >;
 
-/**
- * Default variation for Services Slice
- *
- * - **API ID**: `default`
- * - **Description**: Default
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type ServicesSliceDefault = prismic.SharedSliceVariation<
-  "default",
-  Record<string, never>,
-  never
->;
-
-/**
- * Slice variation for *Services*
- */
-type ServicesSliceVariation = ServicesSliceDefault;
-
-/**
- * Services Shared Slice
- *
- * - **API ID**: `services`
- * - **Description**: Services
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type ServicesSlice = prismic.SharedSlice<
-  "services",
-  ServicesSliceVariation
->;
-
 declare module "@prismicio/client" {
   interface CreateClient {
     (
@@ -251,9 +268,11 @@ declare module "@prismicio/client" {
 
   namespace Content {
     export type {
-      HomeDocument,
-      HomeDocumentData,
-      HomeDocumentDataSlicesSlice,
+      HomepageDocument,
+      HomepageDocumentData,
+      HomepageDocumentDataSlicesSlice,
+      ServicesDocument,
+      ServicesDocumentData,
       AllDocumentTypes,
       AboutSlice,
       AboutSliceDefaultPrimary,
@@ -264,11 +283,9 @@ declare module "@prismicio/client" {
       HeroSliceVariation,
       HeroSliceDefault,
       ServiceSlice,
+      ServiceSliceDefaultItem,
       ServiceSliceVariation,
       ServiceSliceDefault,
-      ServicesSlice,
-      ServicesSliceVariation,
-      ServicesSliceDefault,
     };
   }
 }
