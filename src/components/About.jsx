@@ -25,7 +25,7 @@ function About({data}) {
       },
       opacity: 1,
       ease: "none",
-      stagger: 0.4,
+      stagger: 0.2,
 
     })
 
