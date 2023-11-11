@@ -20,7 +20,7 @@ function About({data}) {
         trigger: '#about-section > p',
         scrub: true,
         start: `top center`,
-end:'bottom top'
+end:'bottom top',
         markers: false
       },
       opacity: 1,
