@@ -17,10 +17,10 @@ function About({data}) {
     gsap.to('.char', {
 
       scrollTrigger: {
-        trigger: '#about-section',
+        trigger: '#about-section > p',
         scrub: true,
-        start: `top +=${window.innerHeight / 1.5}`,
-
+        start: `top center`,
+end:'bottom top'
         markers: false
       },
       opacity: 1,
