@@ -32,28 +32,36 @@ function NavBar() {
                 <ul className='nav-list'>
                     <li className='nav-item'>
                         <Link onClick={() => {
-                            setOpen(false)
+                            if(open){
+                                setOpen(false)
+                            }
                         }} href={'#hero'}>
                             Home
                         </Link>
                     </li>
                     <li className='nav-item'>
                         <Link onClick={() => {
-                            setOpen(false)
+                            if(open){
+                                setOpen(false)
+                            }
                         }} href={'#about-section'}>
                             Chi Siamo
                         </Link>
                     </li>
                     <li className='nav-item'>
                         <Link onClick={() => {
-                            setOpen(false)
+                            if(open){
+                                setOpen(false)
+                            }
                         }} href={'#services'}>
                             Servizi
                         </Link>
                     </li>
                     <li className='nav-item'>
                         <Link onClick={() => {
-                            setOpen(false)
+                            if(open){
+                                setOpen(false)
+                            }
                         }} href={'#contacts'}>
                             Contattaci
                         </Link>
