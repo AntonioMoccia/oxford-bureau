@@ -56,9 +56,9 @@ function Hero({ data }) {
                     {data.primary.hero_paragraph}
                 </p>
                 <div className='hero-contact-button'>
-                    <Link href={'#contacts'}>
+                    <a href={'#contacts'}>
                         Contattaci
-                    </Link>
+                    </a>
                 </div>
             </div>
 

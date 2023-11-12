@@ -1,16 +1,18 @@
-#services{
+#services {
     min-height: 100vh;
     width: 100%;
     padding: 0 5%;
     display: flex;
     flex-direction: column;
-    gap:5vh;
-    .service{
+    gap: 5vh;
+
+    .service {
         display: flex;
         gap: 5em;
         justify-content: space-between;
         overflow: hidden;
-        img{
+
+        img {
             width: 100%;
             transform: scale(1.3);
             overflow: hidden;
@@ -18,75 +20,91 @@
             clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
             border-radius: 15px;
         }
-        .service-description{
+
+        .service-description {
             display: flex;
             flex-direction: column;
             justify-content: center;
             width: 100%;
-            h1{
+
+            h1 {
                 font-size: 4vw;
                 opacity: 0;
             }
-            p{
+
+            p {
                 width: 100%;
                 display: flex;
                 text-wrap: wrap;
                 font-size: 30px;
-                margin-top:5%;
-                .word{
-                    opacity:0
+                margin-top: 5%;
+
+                .word {
+                    opacity: 0
                 }
             }
         }
     }
-    .right-img{
+
+    .right-img {
         flex-direction: row-reverse;
-        img{
+
+        img {
             width: 100%;
             border-radius: 15px;
         }
     }
 }
-@media (max-width:700px){
-    #services{
+
+@media (max-width:700px) {
+    #services {
         min-height: 100vh;
         width: 100%;
         padding: 0 5%;
         display: flex;
         flex-direction: column;
-        gap:10vh;
-        .service{
+        gap: 10vh;
+
+        padding-top: 85px;
+
+        .service {
             display: flex;
             gap: 2.5em;
             justify-content: space-between;
             flex-direction: column;
-            img{
+
+            img {
                 width: 100%;
                 border-radius: 5px;
             }
-            .service-description{
+
+            .service-description {
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
                 width: 100%;
-                h1{
+
+                h1 {
                     font-size: 12vw;
                 }
-                p{
+
+                p {
                     width: 100%;
                     display: flex;
                     text-wrap: wrap;
                     font-size: 6vw;
-                    margin-top:5%
+                    margin-top: 5%
                 }
             }
         }
-        .right-img{
+
+        .right-img {
             flex-direction: column;
-            img{
+
+            img {
                 width: 100%;
                 border-radius: 5px;
-                }
+            }
         }
     }
 }
