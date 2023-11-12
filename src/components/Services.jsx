@@ -9,7 +9,7 @@ import SplitType from 'split-type'
 function Services({ data }) {
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger)
-
+console.log(data);
     const services = document.querySelectorAll('.service')
 
     services.forEach((service) => {
@@ -49,8 +49,8 @@ function Services({ data }) {
     <section id='services'>
 
       {
-        data.map((service, i) => {
-          return i % 2 == 0 ? <ServiceLeft key={i} service={service} /> : <ServiceRight />
+        data[0].items.map((service, i) => {
+          return i % 2 == 0 ? <ServiceLeft key={i} service={service} /> : <ServiceRight key={i} service={service}/>
         })
       }
 
