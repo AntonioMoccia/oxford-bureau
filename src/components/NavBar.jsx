@@ -31,34 +31,22 @@ function NavBar() {
             <div className='nav' ref={navBarRef}>
                 <ul className='nav-list'>
                     <li className='nav-item'>
-                        <Link onClick={() => {
-                            if (open && window.innerWidth >= 700) {
-                                setOpen(false)
-                            }
-                        }} href={'/#hero'}>
+                        <Link href='#hero'>
                             Home
                         </Link>
                     </li>
                     <li className='nav-item'>
-                        <Link onClick={() => {
-                            if (open && window.innerWidth >= 700) {
-                                setOpen(false)
-                            }
-                        }} href={'/#about-section'}>
+                        <Link href='#about-section'>
                             Chi Siamo
                         </Link>
                     </li>
                     <li className='nav-item'>
-                        <Link onClick={() => {
-                            if (open && window.innerWidth >= 700) {
-                                setOpen(false)
-                            }
-                        }} href={'/#services'}>
+                        <Link href='#services'>
                             Servizi
                         </Link>
                     </li>
                     <li className='nav-item'>
-                        <Link href={'/#contacts'}>
+                        <Link href='#contacts'>
                             Contattaci
                         </Link>
                     </li>
