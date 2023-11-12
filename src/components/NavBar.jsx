@@ -35,7 +35,7 @@ function NavBar() {
                             if (open && window.innerWidth >= 700) {
                                 setOpen(false)
                             }
-                        }} href={'#hero'}>
+                        }} href={'/#hero'}>
                             Home
                         </Link>
                     </li>
@@ -44,7 +44,7 @@ function NavBar() {
                             if (open && window.innerWidth >= 700) {
                                 setOpen(false)
                             }
-                        }} href={'#about-section'}>
+                        }} href={'/#about-section'}>
                             Chi Siamo
                         </Link>
                     </li>
@@ -53,16 +53,12 @@ function NavBar() {
                             if (open && window.innerWidth >= 700) {
                                 setOpen(false)
                             }
-                        }} href={'#services'}>
+                        }} href={'/#services'}>
                             Servizi
                         </Link>
                     </li>
                     <li className='nav-item'>
-                        <Link onClick={() => {
-                            if (open && window.innerWidth >= 700) {
-                                setOpen(false)
-                            }
-                        }} href={'#contacts'}>
+                        <Link href={'/#contacts'}>
                             Contattaci
                         </Link>
                     </li>
