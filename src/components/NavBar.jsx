@@ -2,24 +2,43 @@
 import React, { useEffect, useState, useRef } from 'react'
 import { FiMenu } from 'react-icons/fi'
 import gsap from 'gsap'
+import Link from 'next/link'
 function NavBar() {
 
     const [open, setOpen] = useState(false)
     const navBarRef = useRef(null)
-    const OnBurgerClick = (e) => { 
+    const OnBurgerClick = (e) => {
         setOpen(!open)
-     }
-     useEffect(()=>{
-        if(open || window.innerWidth>=700){
-            gsap.to(navBarRef.current,{
-                x:0
-            })
-        }else{
-            gsap.to(navBarRef.current,{
-                x:'100%'
+    }
+    useEffect(() => {
+
+        const options = {
+            root: null,
+            rootMargin: '10px',
+            threshold: 1.0
+        }
+
+        const callback = (entries, observer) => {
+            entries.forEach(entry => {
+                console.log(entry);
             })
         }
-     },[open])
+        let observer = new IntersectionObserver(callback, options);
+
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section)
+        })
+
+        if (open || window.innerWidth >= 700) {
+            gsap.to(navBarRef.current, {
+                x: 0
+            })
+        } else {
+            gsap.to(navBarRef.current, {
+                x: '100%'
+            })
+        }
+    }, [open])
     return (
         <nav className='navbar-container'>
             <div className='logo'>
@@ -27,14 +46,38 @@ function NavBar() {
             </div>
             <div className='nav' ref={navBarRef}>
                 <ul className='nav-list'>
-                    <li className='nav-item'>Home</li>
-                    <li className='nav-item'>Chi Siamo</li>
-                    <li className='nav-item'>Servizi</li>
-                    <li className='nav-item'>Contattaci</li>
+                    <li className='nav-item'>
+                        <Link onClick={() => {
+                            setOpen(false)
+                        }} href={'#hero'}>
+                            Home
+                        </Link>
+                    </li>
+                    <li className='nav-item'>
+                        <Link onClick={() => {
+                            setOpen(false)
+                        }} href={'#about-section'}>
+                            Chi Siamo
+                        </Link>
+                    </li>
+                    <li className='nav-item'>
+                        <Link onClick={() => {
+                            setOpen(false)
+                        }} href={'#services'}>
+                            Servizi
+                        </Link>
+                    </li>
+                    <li className='nav-item'>
+                        <Link onClick={() => {
+                            setOpen(false)
+                        }} href={'#contacts'}>
+                            Contattaci
+                        </Link>
+                    </li>
                 </ul>
             </div>
             <div className='burger-container'>
-                <FiMenu className='burger' onClick={OnBurgerClick}/>
+                <FiMenu className='burger' onClick={OnBurgerClick} />
             </div>
         </nav>
     )

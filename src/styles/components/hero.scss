@@ -1,9 +1,10 @@
 #hero {
     display: flex;
-    height: calc(100vh - 80px);
+
+    height: 100vh;
     width: 100%;
     justify-content: center;
-    margin-top: 80px;
+    paddin-top: 80px;
 
     .hero-left {
         height: 80%;
@@ -23,8 +24,10 @@
             justify-content: flex-start;
             align-items: center;
             display: flex;
-            .line{
+
+            .line {
                 overflow: hidden;
+
                 .word {
                     transform: translateY(100%);
                 }
@@ -39,11 +42,14 @@
             justify-content: flex-start;
             align-items: center;
             display: flex;
-            .line{
+
+            .line {
                 overflow: hidden;
+
                 .word {
                     overflow: hidden;
-                    .letter{
+
+                    .letter {
                         transform: translateY(-100%);
                     }
                 }
@@ -58,6 +64,11 @@
             color: white;
             text-transform: uppercase;
             cursor: pointer;
+
+            a {
+                text-decoration: none;
+                color: white;
+            }
         }
     }
 
@@ -77,6 +88,7 @@
             transform-origin: left center;
             clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
             z-index: 1;
+
             img {
                 transform-origin: left center;
                 object-fit: cover;
@@ -94,7 +106,8 @@
         width: 100%;
         flex-direction: column-reverse;
         justify-content: center;
-        padding-top: 25vw;
+        padding-top: 20vw;
+
         .hero-left {
             height: auto;
             width: 100%;
@@ -112,8 +125,10 @@
                 justify-content: center;
                 align-items: center;
                 display: flex;
-                .line{
+
+                .line {
                     overflow: hidden;
+
                     .word {
                         transform: translateY(150%);
                     }
@@ -129,9 +144,11 @@
                 justify-content: center;
                 align-items: center;
                 display: flex;
-                .line{
+
+                .line {
                     .word {
                         overflow: hidden;
+
                         .char {
                             transform: translateY(-100%);
                         }

@@ -9,7 +9,7 @@ import SplitType from 'split-type'
 function Services({ data }) {
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger)
-console.log(data);
+    console.log(data);
     const services = document.querySelectorAll('.service')
 
     services.forEach((service) => {
@@ -18,9 +18,6 @@ console.log(data);
       const title = service.querySelector('h1')
       const paragraph = service.querySelector('p')
       const splitParagraph = new SplitType(paragraph)
-
-
-
 
       const tl = gsap.timeline({
         scrollTrigger: {

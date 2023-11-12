@@ -21,7 +21,7 @@ function getSliceByName(data, name) {
 export const getData = cache(async (id) => {
   const client = createClient()
   const page = await client.getSingle("homepage");
-  console.log(page.data.slices);
+/*   console.log(page.data.slices); */
   return page.data.slices
 })
 

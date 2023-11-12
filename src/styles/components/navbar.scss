@@ -30,6 +30,10 @@
             align-items: center;
 
             li.nav-item {
+                a{
+                    color: var(--secondary-color-text);
+                    text-decoration: none;
+                }
                 list-style: none;
                 cursor: pointer;
                 display: inline-block;
@@ -73,8 +77,7 @@
         justify-content: space-between;
         align-items: center;
         padding: 0 5%;
-        background-color: white;
-        position: fixed;
+        background-color: var(--background-body-color);        position: fixed;
         width: 100vw;
         z-index: 50;
         top: 0;
@@ -93,6 +96,7 @@
 
             .burger {
                 font-size: 7vw;
+                cursor: pointer;
             }
         }
 
@@ -108,7 +112,7 @@
             position: absolute;
             background-color: white;
             transform: translateX(100%);
-
+            background-color: var(--background-body-color);
             .nav-list {
                 width: 50%;
                 display: flex;
