@@ -32,7 +32,7 @@ function NavBar() {
                 <ul className='nav-list'>
                     <li className='nav-item'>
                         <Link onClick={() => {
-                            if(open){
+                            if (open && window.innerWidth >= 700) {
                                 setOpen(false)
                             }
                         }} href={'#hero'}>
@@ -41,7 +41,7 @@ function NavBar() {
                     </li>
                     <li className='nav-item'>
                         <Link onClick={() => {
-                            if(open){
+                            if (open && window.innerWidth >= 700) {
                                 setOpen(false)
                             }
                         }} href={'#about-section'}>
@@ -50,7 +50,7 @@ function NavBar() {
                     </li>
                     <li className='nav-item'>
                         <Link onClick={() => {
-                            if(open){
+                            if (open && window.innerWidth >= 700) {
                                 setOpen(false)
                             }
                         }} href={'#services'}>
@@ -59,7 +59,7 @@ function NavBar() {
                     </li>
                     <li className='nav-item'>
                         <Link onClick={() => {
-                            if(open){
+                            if (open && window.innerWidth >= 700) {
                                 setOpen(false)
                             }
                         }} href={'#contacts'}>
