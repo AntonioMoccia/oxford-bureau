@@ -5,27 +5,27 @@ import Badge from './badge'
 import SplitType from 'split-type';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
-import {PrismicRichText} from '@prismicio/react'
+import { PrismicRichText } from '@prismicio/react'
 
-function About({data}) {
+function About({ data }) {
   useEffect(() => {
-    const aboutText = new SplitType('.about-text > p')
+    const aboutText = new SplitType('.about-text', { types: 'lines,words,chars' })
     gsap.registerPlugin(ScrollTrigger)
 
     const tl = gsap.timeline()
+    const lines = document.querySelectorAll('.about-text .line')
 
-    gsap.to('.char', {
-
+    gsap.to('.about-text .char', {
       scrollTrigger: {
-        trigger: '#about-section > p',
-        scrub: true,
+        trigger: '#about-section',
         start: `top center`,
-        end: `bottom top`,
+        end: `+=${document.querySelector('#about-section').getBoundingClientRect().height / 1.1}`,
+        scrub: true,
         markers: false
       },
       opacity: 1,
       ease: "none",
-      stagger: 0.2,
+      stagger: 0.1,
 
     })
 
@@ -34,7 +34,7 @@ function About({data}) {
   return (
     <section id='about-section'>
       <div className='about-text'>
-          <PrismicRichText field={data.primary.about_text} />
+        <PrismicRichText field={data.primary.about_text} />
       </div>
       <div className='badges-container'>
 
