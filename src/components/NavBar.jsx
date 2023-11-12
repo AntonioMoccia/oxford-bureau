@@ -12,22 +12,6 @@ function NavBar() {
     }
     useEffect(() => {
 
-        const options = {
-            root: null,
-            rootMargin: '10px',
-            threshold: 1.0
-        }
-
-        const callback = (entries, observer) => {
-            entries.forEach(entry => {
-                console.log(entry);
-            })
-        }
-        let observer = new IntersectionObserver(callback, options);
-
-        document.querySelectorAll('section').forEach(section => {
-            observer.observe(section)
-        })
 
         if (open || window.innerWidth >= 700) {
             gsap.to(navBarRef.current, {
