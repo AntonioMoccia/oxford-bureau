@@ -1,7 +1,7 @@
 'use server'
 import Image from 'next/image'
 import { cache } from 'react'
-import {createClient} from '../prismicio'
+import { createClient } from '../prismicio'
 import Head from 'next/head'
 import About from '../components/About'
 import Contact from '../components/Contact'
@@ -11,6 +11,7 @@ import Services from '../components/Services'
 import '../styles/index.scss'
 
 function getSliceByName(data, name) {
+
   return data.filter(item => {
     return item.slice_type == name
   });
@@ -21,7 +22,7 @@ function getSliceByName(data, name) {
 export const getData = cache(async (id) => {
   const client = createClient()
   const page = await client.getSingle("homepage");
-/*   console.log(page.data.slices); */
+
   return page.data.slices
 })
 
@@ -29,7 +30,7 @@ export const getData = cache(async (id) => {
 export default async function Home() {
 
   const page = await getData()
-
+  console.log(getSliceByName(page, 'contacts')[0]);
   return (
     <>
       <Head>
@@ -42,8 +43,8 @@ export default async function Home() {
         <NavBar />
         <Hero data={getSliceByName(page, 'hero')[0]} />
         <About data={getSliceByName(page, 'about')[0]} />
-        <Services data={getSliceByName(page, 'service')}  />
-        <Contact data={getSliceByName(page,'contacts')[0]} />
+        <Services data={getSliceByName(page, 'service')} />
+        <Contact data={getSliceByName(page, 'contacts')[0]} />
       </main>
     </>
   )
