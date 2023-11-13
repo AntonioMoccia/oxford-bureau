@@ -12,8 +12,10 @@ function Hero({ data }) {
         let paragraph = new SplitType('.hero-left > p', { types: 'lines,words,chars' })
         const tl = gsap.timeline()
         tl.to('#hero .hero-left h1 .word', {
-            y: 1,
-            duration: 1.2
+            y: 0,
+            duration: 1.2,
+            delay: 0.5,
+            stagger: 0.01
         }).to('#hero .hero-left p .char', {
             ease: "power2",
             y: '1.9%',

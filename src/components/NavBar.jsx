@@ -35,6 +35,7 @@ function NavBar() {
                             setOpen(false)
                         }} href='#hero'>
                             Home
+                            
                         </a>
                     </li>
                     <li className='nav-item'>

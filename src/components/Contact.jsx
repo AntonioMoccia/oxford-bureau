@@ -7,8 +7,9 @@ import { CSSRulePlugin } from 'gsap/dist/CSSRulePlugin'
 import SplitType from 'split-type'
 import InputField from './InputField'
 
-function Contact() {
+function Contact({data}) {
   useEffect(() => {
+    console.log(data);
     gsap.registerPlugin(ScrollTrigger, CSSRulePlugin)
     const tl = gsap.timeline({
       scrollTrigger: {
@@ -60,11 +61,11 @@ function Contact() {
       </div>
       <div className='section-contacts right'>
         <h4>Email</h4>
-        <p>info@oxfordbureau.it</p>
+        <p>{data.primary.email}</p>
         <h4>Phone Number</h4>
-        <p>+39 3936545133</p>
+        <p>{data.primary.phone}</p>
         <h4>P.Iva</h4>
-        <p>12345678945</p>
+        <p>{data.primary.partita_iva}</p>
       </div>
     </section>
   )
