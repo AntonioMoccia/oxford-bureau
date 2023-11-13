@@ -30,7 +30,7 @@ export const getData = cache(async (id) => {
 export default async function Home() {
 
   const page = await getData()
-  console.log(getSliceByName(page, 'contacts')[0]);
+  
   return (
     <>
       <Head>
@@ -41,10 +41,10 @@ export default async function Home() {
       </Head>
       <main>
         <NavBar />
-        <Hero data={data && getSliceByName(page, 'hero')[0]} />
-        <About data={data && getSliceByName(page, 'about')[0]} />
-        <Services data={data &&  getSliceByName(page, 'service')} />
-        <Contact data={data && getSliceByName(page, 'contacts')[0]} />
+        <Hero data={getSliceByName(page, 'hero')[0]} />
+        <About data={getSliceByName(page, 'about')[0]} />
+        <Services data={getSliceByName(page, 'service')} />
+        <Contact data={getSliceByName(page, 'contacts')[0]} />
       </main>
     </>
   )
