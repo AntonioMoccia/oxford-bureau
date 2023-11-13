@@ -1,15 +1,18 @@
 'use client'
-import React, { useEffect } from 'react'
+import React, { useEffect,useState } from 'react'
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 import gsap from 'gsap'
 import { CSSRulePlugin } from 'gsap/dist/CSSRulePlugin'
 
 import SplitType from 'split-type'
 import InputField from './InputField'
+import TextAreaField from './TextAreaField'
 
 function Contact({data}) {
+  
+  const [dataContacts,setDataContacts] = useState() 
   useEffect(() => {
-    console.log(data);
+    setDataContacts(data)
     gsap.registerPlugin(ScrollTrigger, CSSRulePlugin)
     const tl = gsap.timeline({
       scrollTrigger: {
@@ -51,7 +54,7 @@ function Contact({data}) {
             type={'text'}
             htmlFor={'nome'}
           />
-          <InputField
+          <TextAreaField
             label={'Testo'}
             type={'text'}
             htmlFor={'testo'}
@@ -61,11 +64,11 @@ function Contact({data}) {
       </div>
       <div className='section-contacts right'>
         <h4>Email</h4>
-        <p>{data.primary.email}</p>
+        <p>{dataContacts?.primary.email}</p>
         <h4>Phone Number</h4>
-        <p>{data.primary.phone}</p>
+        <p>{dataContacts?.primary.phone}</p>
         <h4>P.Iva</h4>
-        <p>{data.primary.partita_iva}</p>
+        <p>{dataContacts?.primary.partita_iva}</p>
       </div>
     </section>
   )

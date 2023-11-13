@@ -13,4 +13,4 @@ function TextAreaField({
     )
 }
 
-export default InputField
+export default TextAreaField
