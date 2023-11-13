@@ -11,7 +11,7 @@ import TextAreaField from './TextAreaField'
 function Contact({data}) {
   
   useEffect(() => {
-console.log(data);
+
     gsap.registerPlugin(ScrollTrigger, CSSRulePlugin)
     const tl = gsap.timeline({
       scrollTrigger: {
@@ -63,11 +63,11 @@ console.log(data);
       </div>
       <div className='section-contacts right'>
         <h4>Email</h4>
-        <p>{data.primary.email}</p>
+        <p>{'data.primary.email'}</p>
         <h4>Phone Number</h4>
-        <p>{data.primary.phone}</p>
+        <p>{'data.primary.phone'}</p>
         <h4>P.Iva</h4>
-        <p>{data.primary.partita_iva}</p>
+        <p>{'data.primary.partita_iva'}</p>
       </div>
     </section>
   )
