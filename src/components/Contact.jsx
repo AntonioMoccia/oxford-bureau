@@ -59,7 +59,7 @@ function Contact({ data }) {
       </div>
       <div className='section-contacts right'>
         {
-          data.primary && (<>
+          data && (<>
           <h4>Email</h4>
           <p>{data.primary.email}</p>
           <h4>Phone Number</h4>
