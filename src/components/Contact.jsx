@@ -1,5 +1,5 @@
 'use client'
-import React, { useEffect,useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 import gsap from 'gsap'
 import { CSSRulePlugin } from 'gsap/dist/CSSRulePlugin'
@@ -8,10 +8,9 @@ import SplitType from 'split-type'
 import InputField from './InputField'
 import TextAreaField from './TextAreaField'
 
-function Contact({data}) {
-  
-  useEffect(() => {
+function Contact({ data }) {
 
+  useEffect(() => {
     gsap.registerPlugin(ScrollTrigger, CSSRulePlugin)
     const tl = gsap.timeline({
       scrollTrigger: {
@@ -35,9 +34,6 @@ function Contact({data}) {
         stagger: 0.06
       }, '<')
     })
-
-
-
   }, [])
   return (
     <section id='contacts'>
@@ -62,12 +58,16 @@ function Contact({data}) {
         </form>
       </div>
       <div className='section-contacts right'>
-        <h4>Email</h4>
-        <p>{'data.primary.email'}</p>
-        <h4>Phone Number</h4>
-        <p>{'data.primary.phone'}</p>
-        <h4>P.Iva</h4>
-        <p>{'data.primary.partita_iva'}</p>
+        {
+          data.primary && (<>
+          <h4>Email</h4>
+          <p>{data.primary.email}</p>
+          <h4>Phone Number</h4>
+          <p>{data.primary.phone}</p>
+          <h4>P.Iva</h4>
+          <p>{data.primary.partita_iva}</p>
+          </>)
+        }
       </div>
     </section>
   )
