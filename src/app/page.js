@@ -18,19 +18,11 @@ function getSliceByName(data, name) {
   });
 }
 
-
-
-export const getData = cache(async (id) => {
+export default async function Home() {
+  
   const client = createClient()
   const page = await client.getSingle("homepage");
 
-  return page
-})
-
-
-export default async function Home() {
-
-  const page = await getData()
 
   return (
     <>
