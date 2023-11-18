@@ -72,9 +72,9 @@ const Contacts = ({ slice }) => {
         <h4>Email</h4>
         {slice.primary.email}
         <h4>Phone Number</h4>
-     
+        {slice.primary.phone}
         <h4>P.Iva</h4>
-        
+        {slice.primary.partita_iva}
       </div>
     </section>
   );
