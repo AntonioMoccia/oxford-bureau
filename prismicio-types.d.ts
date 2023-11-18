@@ -5,7 +5,7 @@ import type * as prismic from "@prismicio/client";
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
 type HomepageDocumentDataSlicesSlice =
-  | ContactsSlice
+  | ContactSlice
   | ServiceSlice
   | HeroSlice
   | AboutSlice;
@@ -118,68 +118,68 @@ type AboutSliceVariation = AboutSliceDefault;
 export type AboutSlice = prismic.SharedSlice<"about", AboutSliceVariation>;
 
 /**
- * Primary content in *Contacts → Primary*
+ * Primary content in *Contact → Primary*
  */
-export interface ContactsSliceDefaultPrimary {
+export interface ContactSliceDefaultPrimary {
   /**
-   * email field in *Contacts → Primary*
+   * email field in *Contact → Primary*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: contacts.primary.email
+   * - **API ID Path**: contact.primary.email
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   email: prismic.KeyTextField;
 
   /**
-   * phone field in *Contacts → Primary*
+   * phone field in *Contact → Primary*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: contacts.primary.phone
+   * - **API ID Path**: contact.primary.phone
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   phone: prismic.KeyTextField;
 
   /**
-   * partita iva field in *Contacts → Primary*
+   * partita iva field in *Contact → Primary*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: contacts.primary.partita_iva
+   * - **API ID Path**: contact.primary.partita_iva
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   partita_iva: prismic.KeyTextField;
 }
 
 /**
- * Default variation for Contacts Slice
+ * Default variation for Contact Slice
  *
  * - **API ID**: `default`
  * - **Description**: Default
  * - **Documentation**: https://prismic.io/docs/slice
  */
-export type ContactsSliceDefault = prismic.SharedSliceVariation<
+export type ContactSliceDefault = prismic.SharedSliceVariation<
   "default",
-  Simplify<ContactsSliceDefaultPrimary>,
+  Simplify<ContactSliceDefaultPrimary>,
   never
 >;
 
 /**
- * Slice variation for *Contacts*
+ * Slice variation for *Contact*
  */
-type ContactsSliceVariation = ContactsSliceDefault;
+type ContactSliceVariation = ContactSliceDefault;
 
 /**
- * Contacts Shared Slice
+ * Contact Shared Slice
  *
- * - **API ID**: `contacts`
- * - **Description**: Contacts
+ * - **API ID**: `contact`
+ * - **Description**: Contact
  * - **Documentation**: https://prismic.io/docs/slice
  */
-export type ContactsSlice = prismic.SharedSlice<
-  "contacts",
-  ContactsSliceVariation
+export type ContactSlice = prismic.SharedSlice<
+  "contact",
+  ContactSliceVariation
 >;
 
 /**
@@ -327,10 +327,10 @@ declare module "@prismicio/client" {
       AboutSliceDefaultPrimary,
       AboutSliceVariation,
       AboutSliceDefault,
-      ContactsSlice,
-      ContactsSliceDefaultPrimary,
-      ContactsSliceVariation,
-      ContactsSliceDefault,
+      ContactSlice,
+      ContactSliceDefaultPrimary,
+      ContactSliceVariation,
+      ContactSliceDefault,
       HeroSlice,
       HeroSliceDefaultPrimary,
       HeroSliceVariation,

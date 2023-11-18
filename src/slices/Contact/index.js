@@ -8,13 +8,12 @@ import SplitType from 'split-type'
 import InputField from './InputField'
 import TextAreaField from './TextAreaField'
 /**
- * @typedef {import("@prismicio/client").Content.ContactsSlice} ContactsSlice
- * @typedef {import("@prismicio/react").SliceComponentProps<ContactsSlice>} ContactsProps
- * @param {ContactsProps}
+ * @typedef {import("@prismicio/client").Content.ContactSlice} ContactSlice
+ * @typedef {import("@prismicio/react").SliceComponentProps<ContactSlice>} ContactProps
+ * @param {ContactProps}
  */
-const Contacts = ({ slice }) => {
-
-/*   useEffect(() => {
+const Contact = ({ slice }) => {
+  useEffect(() => {
     gsap.registerPlugin(ScrollTrigger, CSSRulePlugin)
     const tl = gsap.timeline({
       scrollTrigger: {
@@ -39,18 +38,15 @@ const Contacts = ({ slice }) => {
       }, '<')
     })
   }, [])
- */
   return (
     <section
-      id='contacts'
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
+      id='contacts'
     >
-
-
       <div className='section-contacts left'>
         <form className='contact-form'>
-{/*           <InputField
+          <InputField
             label={'Email'}
             type={'text'}
             htmlFor={'email'}
@@ -64,7 +60,7 @@ const Contacts = ({ slice }) => {
             label={'Testo'}
             type={'text'}
             htmlFor={'testo'}
-          /> */}
+          />
           <button>Invia</button>
         </form>
       </div>
@@ -82,4 +78,4 @@ const Contacts = ({ slice }) => {
   );
 };
 
-export default Contacts;
+export default Contact;
