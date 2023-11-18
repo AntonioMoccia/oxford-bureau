@@ -1,0 +1,42 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"email": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Ex eiusmod eiusmod nisi minim culpa enim aute exercitation nisi elit."
+						}
+					}
+				]
+			},
+			"phone": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Enim eu aliquip consectetur reprehenderit sunt elit aliquip eiusmod tempor tempor est non est. Occaecat in sunt exercitation eiusmod pariatur ad occaecat aute aute exercitation in nostrud aute. Nulla ex laboris eiusmod aute."
+						}
+					}
+				]
+			},
+			"partita_iva": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Non Lorem irure duis elit qui ut. Laborum nulla exercitation commodo aute ex sunt duis nulla. Incididunt sint ullamco voluptate ex adipisicing do minim."
+						}
+					}
+				]
+			}
+		},
+		"items": []
+	}
+]

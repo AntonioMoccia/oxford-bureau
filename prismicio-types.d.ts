@@ -120,55 +120,55 @@ export type AboutSlice = prismic.SharedSlice<"about", AboutSliceVariation>;
 /**
  * Primary content in *Contacts → Primary*
  */
-export interface ContactsSliceDefaultPrimary {
+export interface ContactsSliceContactsPrimary {
   /**
    * email field in *Contacts → Primary*
    *
-   * - **Field Type**: Rich Text
+   * - **Field Type**: Text
    * - **Placeholder**: *None*
    * - **API ID Path**: contacts.primary.email
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
    */
-  email: prismic.RichTextField;
+  email: prismic.KeyTextField;
 
   /**
    * phone field in *Contacts → Primary*
    *
-   * - **Field Type**: Rich Text
+   * - **Field Type**: Text
    * - **Placeholder**: *None*
    * - **API ID Path**: contacts.primary.phone
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
    */
-  phone: prismic.RichTextField;
+  phone: prismic.KeyTextField;
 
   /**
    * partita iva field in *Contacts → Primary*
    *
-   * - **Field Type**: Rich Text
+   * - **Field Type**: Text
    * - **Placeholder**: *None*
    * - **API ID Path**: contacts.primary.partita_iva
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
    */
-  partita_iva: prismic.RichTextField;
+  partita_iva: prismic.KeyTextField;
 }
 
 /**
  * Default variation for Contacts Slice
  *
- * - **API ID**: `default`
+ * - **API ID**: `contacts`
  * - **Description**: Default
  * - **Documentation**: https://prismic.io/docs/slice
  */
-export type ContactsSliceDefault = prismic.SharedSliceVariation<
-  "default",
-  Simplify<ContactsSliceDefaultPrimary>,
+export type ContactsSliceContacts = prismic.SharedSliceVariation<
+  "contacts",
+  Simplify<ContactsSliceContactsPrimary>,
   never
 >;
 
 /**
  * Slice variation for *Contacts*
  */
-type ContactsSliceVariation = ContactsSliceDefault;
+type ContactsSliceVariation = ContactsSliceContacts;
 
 /**
  * Contacts Shared Slice
@@ -328,9 +328,9 @@ declare module "@prismicio/client" {
       AboutSliceVariation,
       AboutSliceDefault,
       ContactsSlice,
-      ContactsSliceDefaultPrimary,
+      ContactsSliceContactsPrimary,
       ContactsSliceVariation,
-      ContactsSliceDefault,
+      ContactsSliceContacts,
       HeroSlice,
       HeroSliceDefaultPrimary,
       HeroSliceVariation,
