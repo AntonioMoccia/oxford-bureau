@@ -1,5 +1,5 @@
 'use client'
-import {useEffect} from 'react'
+import { useEffect } from 'react'
 import gsap from 'gsap'
 import SplitType from 'split-type';
 import Image from 'next/image';
@@ -55,15 +55,18 @@ const Hero = ({ slice }) => {
       data-slice-variation={slice.variation}
       id='hero'
     >
+
       <div className='hero-left'>
         <h1>
-        {slice.primary.hero_title}
+          {slice.primary.hero_title}
         </h1>
         <p>
           {slice.primary.hero_paragraph}
         </p>
         <div className='hero-contact-button'>
-          Contattaci
+          <a href='#contacts'>
+            Contattaci
+          </a>
         </div>
       </div>
 
