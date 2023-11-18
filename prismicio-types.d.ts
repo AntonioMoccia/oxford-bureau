@@ -120,7 +120,7 @@ export type AboutSlice = prismic.SharedSlice<"about", AboutSliceVariation>;
 /**
  * Primary content in *Contacts → Primary*
  */
-export interface ContactsSliceContactsPrimary {
+export interface ContactsSliceDefaultPrimary {
   /**
    * email field in *Contacts → Primary*
    *
@@ -155,20 +155,20 @@ export interface ContactsSliceContactsPrimary {
 /**
  * Default variation for Contacts Slice
  *
- * - **API ID**: `contacts`
+ * - **API ID**: `default`
  * - **Description**: Default
  * - **Documentation**: https://prismic.io/docs/slice
  */
-export type ContactsSliceContacts = prismic.SharedSliceVariation<
-  "contacts",
-  Simplify<ContactsSliceContactsPrimary>,
+export type ContactsSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<ContactsSliceDefaultPrimary>,
   never
 >;
 
 /**
  * Slice variation for *Contacts*
  */
-type ContactsSliceVariation = ContactsSliceContacts;
+type ContactsSliceVariation = ContactsSliceDefault;
 
 /**
  * Contacts Shared Slice
@@ -328,9 +328,9 @@ declare module "@prismicio/client" {
       AboutSliceVariation,
       AboutSliceDefault,
       ContactsSlice,
-      ContactsSliceContactsPrimary,
+      ContactsSliceDefaultPrimary,
       ContactsSliceVariation,
-      ContactsSliceContacts,
+      ContactsSliceDefault,
       HeroSlice,
       HeroSliceDefaultPrimary,
       HeroSliceVariation,

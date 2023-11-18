@@ -8,6 +8,7 @@ import { CSSRulePlugin } from 'gsap/dist/CSSRulePlugin'
 import SplitType from 'split-type'
 import InputField from './InputField'
 import TextAreaField from './TextAreaField'
+import { PrismicRichText } from '@prismicio/react/dist/react-server/PrismicRichText'
 /**
  * @typedef {import("@prismicio/client").Content.ContactsSlice} ContactsSlice
  * @typedef {import("@prismicio/react").SliceComponentProps<ContactsSlice>} ContactsProps
@@ -69,11 +70,11 @@ const Contacts = ({ slice }) => {
       <div className='section-contacts right'>
 
         <h4>Email</h4>
-        <p>{slice.primary.email}</p>
+        <PrismicRichText field={slice.primary.email} />
         <h4>Phone Number</h4>
-        <p>{slice.primary.phone}</p>
+        <PrismicRichText field={slice.primary.phone} />
         <h4>P.Iva</h4>
-        <p>{slice.primary.partita_iva}</p>
+        <PrismicRichText field={slice.primary.partita_iva} />
       </div>
     </section>
   );

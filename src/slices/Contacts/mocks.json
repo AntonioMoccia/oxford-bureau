@@ -1,29 +1,24 @@
 [
 	{
 		"__TYPE__": "SharedSliceContent",
-		"variation": "contacts",
+		"variation": "default",
 		"primary": {
 			"email": {
 				"__TYPE__": "FieldContent",
-				"value": "hurry",
+				"value": "short",
 				"type": "Text"
 			},
 			"phone": {
 				"__TYPE__": "FieldContent",
-				"value": "hearing",
+				"value": "surrounded",
 				"type": "Text"
 			},
 			"partita_iva": {
 				"__TYPE__": "FieldContent",
-				"value": "went",
+				"value": "raise",
 				"type": "Text"
 			}
 		},
-		"items": [
-			{
-				"__TYPE__": "GroupItemContent",
-				"value": []
-			}
-		]
+		"items": []
 	}
 ]
