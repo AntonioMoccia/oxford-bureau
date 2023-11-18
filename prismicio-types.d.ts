@@ -73,25 +73,7 @@ export type HomepageDocument<Lang extends string = string> =
     Lang
   >;
 
-interface ServicesDocumentData {}
-
-/**
- * services document from Prismic
- *
- * - **API ID**: `services`
- * - **Repeatable**: `false`
- * - **Documentation**: https://prismic.io/docs/custom-types
- *
- * @typeParam Lang - Language API ID of the document.
- */
-export type ServicesDocument<Lang extends string = string> =
-  prismic.PrismicDocumentWithoutUID<
-    Simplify<ServicesDocumentData>,
-    "services",
-    Lang
-  >;
-
-export type AllDocumentTypes = HomepageDocument | ServicesDocument;
+export type AllDocumentTypes = HomepageDocument;
 
 /**
  * Primary content in *About → Primary*
@@ -340,8 +322,6 @@ declare module "@prismicio/client" {
       HomepageDocument,
       HomepageDocumentData,
       HomepageDocumentDataSlicesSlice,
-      ServicesDocument,
-      ServicesDocumentData,
       AllDocumentTypes,
       AboutSlice,
       AboutSliceDefaultPrimary,

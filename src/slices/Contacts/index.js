@@ -14,7 +14,7 @@ import TextAreaField from './TextAreaField'
  */
 const Contacts = ({ slice }) => {
 
-  useEffect(() => {
+/*   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger, CSSRulePlugin)
     const tl = gsap.timeline({
       scrollTrigger: {
@@ -39,7 +39,7 @@ const Contacts = ({ slice }) => {
       }, '<')
     })
   }, [])
-
+ */
   return (
     <section
       id='contacts'
@@ -50,7 +50,7 @@ const Contacts = ({ slice }) => {
 
       <div className='section-contacts left'>
         <form className='contact-form'>
-          <InputField
+{/*           <InputField
             label={'Email'}
             type={'text'}
             htmlFor={'email'}
@@ -64,7 +64,7 @@ const Contacts = ({ slice }) => {
             label={'Testo'}
             type={'text'}
             htmlFor={'testo'}
-          />
+          /> */}
           <button>Invia</button>
         </form>
       </div>

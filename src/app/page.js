@@ -19,7 +19,7 @@ function getSliceByName(data, name) {
 }
 
 export default async function Home() {
-  
+
   const client = createClient()
   const page = await client.getSingle("homepage");
 
@@ -38,4 +38,14 @@ export default async function Home() {
       </main>
     </>
   )
+}
+
+export async function generateMetadata() {
+  const client = createClient();
+  const page = await client.getSingle("homepage");
+
+  return {
+    title: page.data.meta_title,
+    description: page.data.meta_description,
+  };
 }
