@@ -1,3 +1,12 @@
+'use client'
+import React, { useEffect, useState } from 'react'
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
+import gsap from 'gsap'
+import { CSSRulePlugin } from 'gsap/dist/CSSRulePlugin'
+
+import SplitType from 'split-type'
+import InputField from './InputField'
+import TextAreaField from './TextAreaField'
 /**
  * @typedef {import("@prismicio/client").Content.ContactsSlice} ContactsSlice
  * @typedef {import("@prismicio/react").SliceComponentProps<ContactsSlice>} ContactsProps

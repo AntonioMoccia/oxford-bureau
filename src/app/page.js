@@ -8,6 +8,8 @@ import Hero from '../components/Hero'
 import NavBar from '../components/NavBar'
 import Services from '../components/Services'
 import '../styles/index.scss'
+import { SliceZone } from '@prismicio/react'
+import { components } from '@/slices'
 
 function getSliceByName(data, name) {
 
@@ -22,14 +24,14 @@ export const getData = cache(async (id) => {
   const client = createClient()
   const page = await client.getSingle("homepage");
 
-  return page.data.slices
+  return page
 })
 
 
 export default async function Home() {
 
   const page = await getData()
-  
+
   return (
     <>
       <Head>
@@ -39,11 +41,7 @@ export default async function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <NavBar />
-        <Hero data={getSliceByName(page, 'hero')[0]} />
-        <About data={getSliceByName(page, 'about')[0]} />
-        <Services data={getSliceByName(page, 'service')} />
-        <Contact data={getSliceByName(page,'contacts')[0]} />
+        <SliceZone slices={page.data.slices} components={components} />
       </main>
     </>
   )
