@@ -70,11 +70,11 @@ const Contacts = ({ slice }) => {
       <div className='section-contacts right'>
 
         <h4>Email</h4>
-        <PrismicRichText field={slice.primary.email} />
+        {slice.primary.email}
         <h4>Phone Number</h4>
-        <PrismicRichText field={slice.primary.phone} />
+     
         <h4>P.Iva</h4>
-        <PrismicRichText field={slice.primary.partita_iva} />
+        
       </div>
     </section>
   );
