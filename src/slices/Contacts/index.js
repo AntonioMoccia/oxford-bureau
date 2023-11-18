@@ -70,11 +70,11 @@ const Contacts = ({ slice }) => {
       <div className='section-contacts right'>
 
         <h4>Email</h4>
-        {slice.primary.email}
+        <p>{slice.primary.email}</p>
         <h4>Phone Number</h4>
-        {slice.primary.phone}
+        <p>{slice.primary.phone}</p>
         <h4>P.Iva</h4>
-        {slice.primary.partita_iva}
+        <p>{slice.primary.partita_iva}</p>
       </div>
     </section>
   );
