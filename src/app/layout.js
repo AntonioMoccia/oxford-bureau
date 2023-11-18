@@ -1,3 +1,5 @@
+import { PrismicPreview } from '@prismicio/next'
+import { repositoryName } from '@/prismicio'
 
 
 export const metadata = {
@@ -8,7 +10,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="it">
-      <body>{children}</body>
+      <body>
+        {children}
+        <PrismicPreview repositoryName={repositoryName} />
+      </body>
     </html>
   )
 }
