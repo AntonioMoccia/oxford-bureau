@@ -5,7 +5,7 @@ import type * as prismic from "@prismicio/client";
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
 type HomepageDocumentDataSlicesSlice =
-  | ContactSlice
+  | ContactsSlice
   | ServiceSlice
   | HeroSlice
   | AboutSlice;
@@ -118,68 +118,68 @@ type AboutSliceVariation = AboutSliceDefault;
 export type AboutSlice = prismic.SharedSlice<"about", AboutSliceVariation>;
 
 /**
- * Primary content in *Contact → Primary*
+ * Primary content in *Contacts → Primary*
  */
-export interface ContactSliceDefaultPrimary {
+export interface ContactsSliceDefaultPrimary {
   /**
-   * email field in *Contact → Primary*
+   * email field in *Contacts → Primary*
    *
-   * - **Field Type**: Text
+   * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: contact.primary.email
-   * - **Documentation**: https://prismic.io/docs/field#key-text
+   * - **API ID Path**: contacts.primary.email
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
-  email: prismic.KeyTextField;
+  email: prismic.RichTextField;
 
   /**
-   * phone field in *Contact → Primary*
+   * phone field in *Contacts → Primary*
    *
-   * - **Field Type**: Text
+   * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: contact.primary.phone
-   * - **Documentation**: https://prismic.io/docs/field#key-text
+   * - **API ID Path**: contacts.primary.phone
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
-  phone: prismic.KeyTextField;
+  phone: prismic.RichTextField;
 
   /**
-   * partita iva field in *Contact → Primary*
+   * partita iva field in *Contacts → Primary*
    *
-   * - **Field Type**: Text
+   * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: contact.primary.partita_iva
-   * - **Documentation**: https://prismic.io/docs/field#key-text
+   * - **API ID Path**: contacts.primary.partita_iva
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
-  partita_iva: prismic.KeyTextField;
+  partita_iva: prismic.RichTextField;
 }
 
 /**
- * Default variation for Contact Slice
+ * Default variation for Contacts Slice
  *
  * - **API ID**: `default`
  * - **Description**: Default
  * - **Documentation**: https://prismic.io/docs/slice
  */
-export type ContactSliceDefault = prismic.SharedSliceVariation<
+export type ContactsSliceDefault = prismic.SharedSliceVariation<
   "default",
-  Simplify<ContactSliceDefaultPrimary>,
+  Simplify<ContactsSliceDefaultPrimary>,
   never
 >;
 
 /**
- * Slice variation for *Contact*
+ * Slice variation for *Contacts*
  */
-type ContactSliceVariation = ContactSliceDefault;
+type ContactsSliceVariation = ContactsSliceDefault;
 
 /**
- * Contact Shared Slice
+ * Contacts Shared Slice
  *
- * - **API ID**: `contact`
- * - **Description**: Contact
+ * - **API ID**: `contacts`
+ * - **Description**: Contacts
  * - **Documentation**: https://prismic.io/docs/slice
  */
-export type ContactSlice = prismic.SharedSlice<
-  "contact",
-  ContactSliceVariation
+export type ContactsSlice = prismic.SharedSlice<
+  "contacts",
+  ContactsSliceVariation
 >;
 
 /**
@@ -327,10 +327,10 @@ declare module "@prismicio/client" {
       AboutSliceDefaultPrimary,
       AboutSliceVariation,
       AboutSliceDefault,
-      ContactSlice,
-      ContactSliceDefaultPrimary,
-      ContactSliceVariation,
-      ContactSliceDefault,
+      ContactsSlice,
+      ContactsSliceDefaultPrimary,
+      ContactsSliceVariation,
+      ContactsSliceDefault,
       HeroSlice,
       HeroSliceDefaultPrimary,
       HeroSliceVariation,

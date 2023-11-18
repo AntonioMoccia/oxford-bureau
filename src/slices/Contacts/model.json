@@ -1,0 +1,46 @@
+{
+  "id": "contacts",
+  "type": "SharedSlice",
+  "name": "Contacts",
+  "description": "Contacts",
+  "variations": [
+    {
+      "id": "contacts",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "email": {
+          "type": "StructuredText",
+          "config": {
+            "label": "email",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        },
+        "phone": {
+          "type": "StructuredText",
+          "config": {
+            "label": "phone",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        },
+        "partita_iva": {
+          "type": "StructuredText",
+          "config": {
+            "label": "partita iva",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

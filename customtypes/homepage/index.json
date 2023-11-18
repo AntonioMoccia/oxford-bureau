@@ -11,7 +11,7 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
-            "contact": {
+            "contacts": {
               "type": "SharedSlice"
             },
             "service": {
