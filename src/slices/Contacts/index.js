@@ -74,7 +74,6 @@ const Contacts = ({ slice }) => {
         <p>{slice.primary.phone}</p>
         <h4>P.Iva</h4>
         <p>{slice.primary.partita_iva}</p>
-
       </div>
     </section>
   );
