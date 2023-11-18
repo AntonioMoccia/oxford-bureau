@@ -1,8 +1,17 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    images: {
-        domains: ['images.unsplash.com','images.prismic.io']
-      }
+      images: {
+        remotePatterns: [
+          {
+            protocol: "https",
+            hostname: 'images.unsplash.com',
+          },
+          {
+            protocol: "https",
+            hostname: 'images.prismic.io',
+          },
+        ],
+      },
 }
 
 module.exports = nextConfig

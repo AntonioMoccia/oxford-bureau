@@ -35,6 +35,7 @@ function Contact({ data }) {
       }, '<')
     })
   }, [])
+
   return (
     <section id='contacts'>
       <div className='section-contacts left'>
@@ -58,16 +59,14 @@ function Contact({ data }) {
         </form>
       </div>
       <div className='section-contacts right'>
-        {
-          data && (<>
+       
           <h4>Email</h4>
           <p>{data.primary.email}</p>
           <h4>Phone Number</h4>
           <p>{data.primary.phone}</p>
           <h4>P.Iva</h4>
           <p>{data.primary.partita_iva}</p>
-          </>)
-        }
+   
       </div>
     </section>
   )

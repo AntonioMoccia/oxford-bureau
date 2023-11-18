@@ -9,7 +9,7 @@ import SplitType from 'split-type'
 function Services({ data }) {
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger)
-    console.log(data);
+  
     const services = document.querySelectorAll('.service')
 
     services.forEach((service) => {

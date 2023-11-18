@@ -1,4 +1,3 @@
-'use server'
 import Image from 'next/image'
 import { cache } from 'react'
 import { createClient } from '../prismicio'
@@ -44,7 +43,7 @@ export default async function Home() {
         <Hero data={getSliceByName(page, 'hero')[0]} />
         <About data={getSliceByName(page, 'about')[0]} />
         <Services data={getSliceByName(page, 'service')} />
-        <Contact  />
+        <Contact data={getSliceByName(page,'contacts')[0]} />
       </main>
     </>
   )
