@@ -8,7 +8,7 @@ import { CSSRulePlugin } from 'gsap/dist/CSSRulePlugin'
 import SplitType from 'split-type'
 import InputField from './InputField'
 import TextAreaField from './TextAreaField'
-import { PrismicRichText } from '@prismicio/react/dist/react-server/PrismicRichText'
+import { PrismicRichText } from '@prismicio/react'
 /**
  * @typedef {import("@prismicio/client").Content.ContactsSlice} ContactsSlice
  * @typedef {import("@prismicio/react").SliceComponentProps<ContactsSlice>} ContactsProps
