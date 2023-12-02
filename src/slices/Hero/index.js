@@ -10,7 +10,7 @@ import Image from 'next/image';
  */
 const Hero = ({ slice }) => {
   useEffect(() => {
-    console.log(slice);
+
     let title = new SplitType('.hero-left >h1', { types: 'lines,words' })
     let paragraph = new SplitType('.hero-left > p', { types: 'lines,words,chars' })
     const tl = gsap.timeline()
@@ -28,6 +28,7 @@ const Hero = ({ slice }) => {
       duration: 1,
       clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)"
     }, '<')
+
     window.addEventListener('resize', () => {
 
       tl.to('#hero .hero-left h1 .word', {

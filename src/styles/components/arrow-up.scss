@@ -1,0 +1,13 @@
+.arrow-up{
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    font-size: 3em;
+    background-color: white;
+    opacity: 0.4;
+    border-radius: 15%;
+    display: none;
+}
+.active{
+    display: inline;
+}

@@ -10,6 +10,8 @@ import Services from '../components/Services'
 import '../styles/index.scss'
 import { SliceZone } from '@prismicio/react'
 import { components } from '@/slices'
+import ArrowUp from '@/components/ArrowUp'
+
 
 function getSliceByName(data, name) {
 
@@ -35,6 +37,7 @@ export default async function Home() {
       <main>
         <NavBar />
         <SliceZone slices={page.data.slices} components={components} />
+        <ArrowUp />
       </main>
     </>
   )

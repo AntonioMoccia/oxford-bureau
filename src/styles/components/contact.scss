@@ -5,7 +5,8 @@
   justify-content: center;
   align-items: center;
   margin-top: 5rem;
-
+  background-color: var(--secondary-color);
+  padding-top: 5%;
   .section-contacts {
     height: 100vh;
     width: 50%;
@@ -32,6 +33,7 @@
           color: white;
           overflow: hidden;
           height: 100%;
+          max-height: 5rem;
           .word{
             overflow: hidden;
             .char{
@@ -90,6 +92,7 @@
 
   .left {
     align-items: center;
+    height: auto;
   }
 
   .right {
@@ -116,10 +119,10 @@
     gap: 5px;
     align-items: center;
     justify-content: center;
+    height: auto;
   }
 }
-
-@media (max-width:600px) {
+@media (max-width:991px) {
   #contacts {
     width: 100%;
     height: auto;
@@ -199,18 +202,18 @@
 
     .left {
       align-items: center;
-      height: 50vh;
+      height: auto;
     }
 
     .right {
       width: 100%;
       justify-content: flex-start;
-      height: 45vh;
+      min-height: 45vh;
       gap: 5px;
       align-items: center;
       justify-content: flex-start;
       padding-top: 10%;
-
+      height: auto;
       p,
       h4 {
         width: 50%;

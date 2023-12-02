@@ -70,7 +70,7 @@
     }
 }
 
-@media (max-width:700px) {
+@media (max-width:991px) {
     .navbar-container {
         height: 80px;
         display: flex;
@@ -78,7 +78,7 @@
         align-items: center;
         padding: 0 5%;
         background-color: var(--background-body-color);        position: fixed;
-        width: 100vw;
+        width: 100%;
         z-index: 50;
         top: 0;
         right: 0;
@@ -95,8 +95,9 @@
             align-items: center;
 
             .burger {
-                font-size: 7vw;
+                font-size: 3em;
                 cursor: pointer;
+                font-weight: 300;
             }
         }
 

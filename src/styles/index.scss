@@ -1,9 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
 @import './components/navbar.scss';
 @import './components/hero.scss';
 @import './components/about.scss';
 @import './components/services.scss';
 @import './components/contact.scss';
+@import './components/arrow-up.scss';
 
 * {
     padding: 0;
