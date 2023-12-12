@@ -21,9 +21,10 @@
             font-size: 1.875rem;
             line-height: 2.25rem;
             text-transform: capitalize;
+            margin-bottom: 30px;
         }
         strong{
-            color: black;
+            color: var(--secondary-color-text);
         }
 
         p {

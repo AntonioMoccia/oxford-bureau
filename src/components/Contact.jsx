@@ -58,7 +58,7 @@ function Contact({ data }) {
           <button className=' bg-white text-secondary-color w-24 mt-6 py-2 rounded-md px-5'>Invia</button>
         </form>
       </div>
-      <div className='section-contacts right'>
+      <div className='section-contacts px-14 md:px-36 text-sm mt-4 text-left right'>
        
           <h4>Email</h4>
           <p>{data.primary.email}</p>

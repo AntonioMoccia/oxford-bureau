@@ -6,7 +6,7 @@ function Badge({
     testo
 }) {
     return (
-        <div className=' border border-black min-w-20 w-40 px-8 py-4 rounded-lg gap-3 h-auto justify-between flex flex-col'>
+        <div className=' border text-secondary-color-text border-black min-w-20 w-40 px-8 py-4 rounded-lg gap-3 h-auto justify-between flex flex-col'>
             <div className='icon flex items-center justify-center text-4xl'>
                 {icon}
             </div>

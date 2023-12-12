@@ -36,16 +36,16 @@ function Hero({ data }) {
     return (
         <section id='hero' className='h-screen flex flex-col justify-around mt-12 lg:flex-row-reverse '>
             <div className=' flex justify-center  items-center flex-col lg:h-full h-96 lg:mt-0 mt-10 '>
-                <div className='h-2/3 w-2/3 lg:w-[30rem] lg:h-[30rem] object-cover object-center flex hero-image justify-center rounded-md items-center overflow-hidden'>
+                <div className='h-2/3 w-2/3 md:w-[30rem] md:h-[30rem] object-cover object-center flex hero-image justify-center rounded-md items-center overflow-hidden'>
                     <Image loading='eager' src={data.primary.hero_image.url} height={data.primary.hero_image.dimensions.height} width={data.primary.hero_image.dimensions.width} />
                 </div>
             </div>
             <div className='h-full px-12 flex flex-col items-center mt-4 justify-start lg:justify-center lg:items-start'>
                 <div className='w-full flex flex-col items-center lg:items-start'>
-                    <h1 className='w-full text-center lg:text-left text-4xl lg:text-5xl font-semibold hero-title overflow-hidden'>
+                    <h1 className='w-full text-center text-secondary-color-text lg:text-left text-4xl lg:text-5xl font-semibold hero-title overflow-hidden'>
                         {data.primary.hero_title}
                     </h1>
-                    <h4 className=' text-center lg:text-left hero-paragraph overflow-hidden text-xl'>
+                    <h4 className=' text-secondary-color-text text-center lg:text-left hero-paragraph overflow-hidden text-xl'>
                         {data.primary.hero_paragraph}
                     </h4>
                     <a href='#contacts' className='mt-8' >

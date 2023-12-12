@@ -46,8 +46,8 @@ function NavBar() {
         toggleOpenClose()
     }, [open])
     return (
-        <nav className=' bg-background-body-color w-screen fixed top-0 left-0 right-0 px-4 lg:px-80 h-16 flex justify-between z-50'>
-            <div className='absolute z-30 right-4 h-full cursor-pointer lg:hidden flex justify-center items-center text-xl  text-black'
+        <nav className='text-secondary-color-text bg-background-body-color w-screen fixed top-0 left-0 right-0 px-4 lg:px-80 h-16 flex justify-between z-50'>
+            <div className='absolute z-30 right-4 h-full cursor-pointer lg:hidden flex justify-center items-center text-xl  '
                 onClick={() => {
                     setOpen(!open)
                 }}
@@ -65,7 +65,7 @@ function NavBar() {
                     {
                         NAV_LINKS.map(({ link, label }, index) => {
                             return (
-                                <Link href={link} key={index} onClick={() => { setOpen(false) }} className=' text-2xl lg:text-sm font-normal text-black'><li>{label}</li></Link>
+                                <Link href={link} key={index} onClick={() => { setOpen(false) }} className=' text-2xl lg:text-sm font-normal '><li>{label}</li></Link>
                             )
                         })
                     }
