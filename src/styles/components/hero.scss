@@ -1,4 +1,4 @@
-#hero {
+/* #hero {
     display: flex;
 
     height: 100vh;
@@ -79,25 +79,35 @@
         justify-content: center;
         align-items: center;
 
-        .hero-image {
-            position: absolute;
-            border-radius: 15px;
-            width: 35vw;
-            height: 35vw;
-            overflow: hidden;
-            transform-origin: left center;
-            clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
-            z-index: 1;
-
-            img {
-                transform-origin: left center;
-                object-fit: cover;
-                object-position: center;
-            }
+      
+    }
+} */
+.hero-title{
+    .line {
+        overflow: hidden;
+    
+        .word {
+            transform: translateY(100%);
         }
     }
 }
+.hero-paragraph{
+    .line {
+        overflow: hidden;
+    
+        .char {
+            transform: translateY(-100%);
+        }
+    }
+}
+.hero-image {
 
+    overflow: hidden;
+    transform-origin: left center;
+    clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+
+}
+/* 
 @media (max-width:991px) {
     #hero {
         display: flex;
@@ -187,4 +197,4 @@
             }
         }
     }
-}
+} */

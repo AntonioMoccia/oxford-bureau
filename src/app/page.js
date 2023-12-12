@@ -13,18 +13,18 @@ import { components } from '@/slices'
 import ArrowUp from '@/components/ArrowUp'
 
 
+
 function getSliceByName(data, name) {
 
   return data.filter(item => {
     return item.slice_type == name
-  });
+  })[0]
 }
 
 export default async function Home() {
 
   const client = createClient()
   const page = await client.getSingle("homepage");
-
 
   return (
     <>
@@ -35,11 +35,14 @@ export default async function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <NavBar />
-        <SliceZone slices={page.data.slices} components={components} />
-        <ArrowUp />
+       <NavBar />
+        <Hero data={getSliceByName(page.data.slices, 'hero')} />
+        <About data={getSliceByName(page.data.slices, 'about')} />
+        <Services data={getSliceByName(page.data.slices, 'service')} />
+        <Contact data={getSliceByName(page.data.slices, 'contacts')} />
+        <ArrowUp /> 
       </main>
-    </>
+    </> 
   )
 }
 

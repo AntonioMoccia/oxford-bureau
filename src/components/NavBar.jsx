@@ -1,68 +1,75 @@
 'use client'
-import React, { useEffect, useState, useRef } from 'react'
-import { FiMenu } from 'react-icons/fi'
-import gsap from 'gsap'
+import React, { useEffect, useRef, useState } from 'react'
+
 import Link from 'next/link'
+import { HiMenu } from "react-icons/hi";
+import { CgClose } from "react-icons/cg";
+import gsap from 'gsap';
+
+
 function NavBar() {
-
     const [open, setOpen] = useState(false)
-    const navBarRef = useRef(null)
-    const OnBurgerClick = (e) => {
-        setOpen(!open)
-    }
-    useEffect(() => {
+    const navItemsRef = useRef(null)
 
+    const NAV_LINKS = [
+        {
+            label: 'Home',
+            link: '#home'
+        },
+        {
+            label: 'Chi Siamo',
+            link: '#about-section'
+        },
+        {
+            label: 'Servizi',
+            link: '#services'
+        },
+        {
+            label: 'Contattaci',
+            link: '#contacts'
+        }
+    ]
 
-        if (open || window.innerWidth >= 991) {
-            gsap.to(navBarRef.current, {
-                x: 0
-            })
-        } else {
-            gsap.to(navBarRef.current, {
+    function toggleOpenClose() {
+        if (!open && window.innerWidth < 1024) {
+            gsap.to(navItemsRef.current, {
                 x: '100%'
             })
+        } else {
+            gsap.to(navItemsRef.current, {
+                x: 0
+            })
         }
+    }
+
+    useEffect(() => {
+        toggleOpenClose()
     }, [open])
     return (
-        <nav className='navbar-container'>
-            <div className='logo'>
+        <nav className=' bg-background-body-color w-screen fixed top-0 left-0 right-0 px-4 lg:px-80 h-16 flex justify-between z-50'>
+            <div className='absolute z-30 right-4 h-full cursor-pointer lg:hidden flex justify-center items-center text-xl  text-black'
+                onClick={() => {
+                    setOpen(!open)
+                }}
+            >
+                {open ? <CgClose /> : <HiMenu />}
+            </div>
+
+            <div className=' h-full flex items-center justify-center'>
                 LOGO
             </div>
-            <div className='nav' ref={navBarRef}>
-                <ul className='nav-list'>
-                    <li className='nav-item'>
-                        <a onClick={() => {
-                            setOpen(false)
-                        }} href='#hero'>
-                            Home
-                            
-                        </a>
-                    </li>
-                    <li className='nav-item'>
-                        <a onClick={() => {
-                            setOpen(false)
-                        }} href='#about-section'>
-                            Chi Siamo
-                        </a>
-                    </li>
-                    <li className='nav-item'>
-                        <a onClick={() => {
-                            setOpen(false)
-                        }} href='#services'>
-                            Servizi
-                        </a>
-                    </li>
-                    <li className='nav-item'>
-                        <a onClick={() => {
-                            setOpen(false)
-                        }} href='#contacts'>
-                            Contattaci
-                        </a>
-                    </li>
+
+            {/* navbar items*/}
+            <div ref={navItemsRef} className='bg-background-body-color  lg:w-auto lg:h-full lg:translate-x-0 translate-x-[100%] h-screen flex justify-center items-center lg:top-0  bottom-0 z-0 w-screen absolute lg:relative top-16 left-0 lg:right-0 '>
+                <ul className='flex flex-col gap-8 items-center justify-start pt-24 lg:pt-0  w-full  h-full lg:flex-row lg:gap-10'>
+                    {
+                        NAV_LINKS.map(({ link, label }, index) => {
+                            return (
+                                <Link href={link} key={index} onClick={() => { setOpen(false) }} className=' text-2xl lg:text-sm font-normal text-black'><li>{label}</li></Link>
+                            )
+                        })
+                    }
                 </ul>
-            </div>
-            <div className='burger-container'>
-                <FiMenu className='burger' onClick={OnBurgerClick} />
             </div>
         </nav>
     )

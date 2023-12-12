@@ -1,15 +1,16 @@
 'use client'
 import { PrismicRichText } from '@prismicio/react';
-import React from 'react'
+import React, { useEffect } from 'react'
 
-function ServiceLeft({ service }) 
-{    return (
-        <div className='service left-img'>
-            <img src={service.service_image.url} />
-            <div className='service-description'>
-                <PrismicRichText field={ service.text_service } />
-            </div>
+function ServiceLeft({ service }) {
+
+    return (
+        <div className='service'>
+        <img src={service.service_image.url} />
+        <div className='text-xl lg:text-3xl service-description '>
+        <PrismicRichText field={ service.text_service } />
         </div>
+    </div>
     )
 }
 

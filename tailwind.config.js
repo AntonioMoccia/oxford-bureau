@@ -9,7 +9,17 @@ module.exports = {
     "./src/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors:{
+        "primary-color" : "var(--primary-color)",
+        "secondary-color" : "var(--secondary-color)",
+        "btn-primary-color" : "var(--btn-primary-color)",
+        "background-body-color" : "var(--background-body-color)",
+        "primary-color-text" : "var(--primary-color-text)",
+        "secondary-color-text" : "var(--secondary-color-text)",
+        "btn-secondary-color" : "var(--btn-secondary-color)",
+      }
+    },
   },
   plugins: [],
 }

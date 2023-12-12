@@ -39,7 +39,7 @@ function Contact({ data }) {
   return (
     <section id='contacts'>
       <div className='section-contacts left'>
-        <form className='contact-form'>
+        <form className='contact-form gap-3'>
           <InputField
             label={'Email'}
             type={'text'}
@@ -55,7 +55,7 @@ function Contact({ data }) {
             type={'text'}
             htmlFor={'testo'}
           />
-          <button>Invia</button>
+          <button className=' bg-white text-secondary-color w-24 mt-6 py-2 rounded-md px-5'>Invia</button>
         </form>
       </div>
       <div className='section-contacts right'>

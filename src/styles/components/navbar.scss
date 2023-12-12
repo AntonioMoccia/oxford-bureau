@@ -95,9 +95,7 @@
             align-items: center;
 
             .burger {
-                font-size: 3em;
                 cursor: pointer;
-                font-weight: 300;
             }
         }
 
@@ -108,7 +106,7 @@
             top: 0;
             display: flex;
             justify-content: center;
-            height: calc(100vh - 80px);
+           /*  height: calc(100vh - 80px); */
             margin-top: 80px;
             position: absolute;
             background-color: white;

@@ -7,7 +7,7 @@ function ServiceRight({service}) {
     return (
         <div className='service right-img'>
             <img src={service.service_image.url} />
-            <div className='service-description'>
+            <div className='service-description text-xl lg:text-3xl'>
             <PrismicRichText field={ service.text_service } />
             </div>
         </div>

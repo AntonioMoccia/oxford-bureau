@@ -13,13 +13,13 @@ function About({ data }) {
     gsap.registerPlugin(ScrollTrigger)
 
     const tl = gsap.timeline()
-    const lines = document.querySelectorAll('.about-text .line')
 
-    gsap.to('.about-text .char', {
+
+    gsap.to('.about-text .line .word .char', {
       scrollTrigger: {
         trigger: '#about-section',
         start: `top center`,
-        end: `+=${document.querySelector('#about-section').getBoundingClientRect().height / 1.1}`,
+        end: `+=${document.querySelector('#about-section').getBoundingClientRect().height / 1.2}`,
         scrub: true,
         markers: false
       },
@@ -33,27 +33,29 @@ function About({ data }) {
   }, [])
   return (
     <section id='about-section'>
-      <div className='about-text'>
+      <div className='about-text px-4 text-2xl lg:text-4xl lg:px-32 py-10'>
         <PrismicRichText field={data.primary.about_text} />
       </div>
-      <div className='badges-container'>
+      <div className='w-full py-8 flex items-center justify-center'>
+        <div className=' grid grid-cols-2 gap-8 md:gap-12  md:grid-cols-3'>
 
-        <Badge
-          icon={<AiOutlineCalendar />}
-          titolo={'25+'}
-          testo={'Esperienza'}
-        />
-        <Badge
-          icon={<AiOutlineCalendar />}
-          titolo={'25+'}
-          testo={'Esperienza'}
-        />
-        <Badge
-          icon={<AiOutlineCalendar />}
-          titolo={'25+'}
-          testo={'Esperienza'}
-        />
+          <Badge
+            icon={<AiOutlineCalendar />}
+            titolo={'25+'}
+            testo={'Esperienza'}
+          />
+          <Badge
+            icon={<AiOutlineCalendar />}
+            titolo={'25+'}
+            testo={'Esperienza'}
+          />
+          <Badge
+            icon={<AiOutlineCalendar />}
+            titolo={'25+'}
+            testo={'Esperienza'}
+          />
 
+        </div>
       </div>
     </section>
   )

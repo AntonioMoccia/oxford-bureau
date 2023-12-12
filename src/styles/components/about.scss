@@ -5,16 +5,15 @@
 
     .about-text {
         width: 100%;
-        padding: 10rem 20rem;
         background-color: var(--secondary-color);
         color: rgb(207, 192, 192);
         strong{
             color: var(--btn-secondary-color) ;
         }
         p {
-            font-size: 40px;
+            /* font-size: 40px; */
             text-transform: lowercase;
-            line-height: 60px;
+           /*  line-height: 60px; */
 
 
             .char {
@@ -71,12 +70,10 @@
 
         .about-text {
             width: 100%;
-            padding: 2rem 5vw;
 
             p {
-                font-size: 7vw;
+                
                 text-transform: lowercase;
-                line-height: 1.5em;
             }
         }
 

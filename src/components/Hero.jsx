@@ -8,75 +8,52 @@ import Link from 'next/link';
 function Hero({ data }) {
 
     useEffect(() => {
-        let title = new SplitType('.hero-left >h1', { types: 'words' })
-        let paragraph = new SplitType('.hero-left > p', { types: 'lines,words,chars' })
+        let title = new SplitType('.hero-title', { types: 'lines,words' })
+        let paragraph = new SplitType('.hero-paragraph', { types: 'lines,words,chars' })
+
         const tl = gsap.timeline()
-        tl.to('#hero .hero-left h1 .word', {
-            y: 0,
+
+
+        tl.to('.hero-title .word', {
+            ease: "power2",
+            y: 1,
             duration: 1.2,
-            delay: 0.5,
             stagger: 0.01
-        }).to('#hero .hero-left p .char', {
+        }).to('.hero-paragraph .char', {
             ease: "power2",
             y: '1.9%',
-            duration: 0.4,
+            duration: 0.8,
             stagger: 0.01
         }, '<').to('.hero-image', {
             ease: "power2",
             duration: 1,
             clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)"
         }, '<')
-        window.addEventListener('resize', () => {
-
-            tl.to('#hero .hero-left h1 .word', {
-                ease: "power2",
-                y: 1,
-                duration: 1.2
-            }).to('#hero .hero-left p .char', {
-                ease: "power2",
-                y: '1.9%',
-                duration: 0.4,
-                stagger: 0.01
-            }, '<').to('.hero-image', {
-                ease: "power2",
-                duration: 1,
-                clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)"
-            }, '<')
-        })
-
-
-
     }, [])
-    return (
-        <section id='hero'>
 
-            <div className='hero-left'>
-                <h1>
-                    {data.primary.hero_title}
-                </h1>
-                <p>
-                    {data.primary.hero_paragraph}
-                </p>
-                <div className='hero-contact-button'>
-                    <a href='#contacts'>
-                        Contattaci
-                    </a>
+
+
+    return (
+        <section id='hero' className='h-screen flex flex-col justify-around mt-12 lg:flex-row-reverse '>
+            <div className=' flex justify-center  items-center flex-col lg:h-full h-96 lg:mt-0 mt-10 '>
+                <div className='h-2/3 w-2/3 lg:w-[35rem] lg:h-[35rem] object-cover object-center flex hero-image justify-center rounded-md items-center overflow-hidden'>
+                    <Image loading='eager' src={data.primary.hero_image.url} height={data.primary.hero_image.dimensions.height} width={data.primary.hero_image.dimensions.width} />
                 </div>
             </div>
-
-            <div className='hero-right'>
-                <div className='hero-image'>
-                    <Image alt='hero image' fill={true} src={data.primary.hero_image.url} />
+            <div className='h-full px-12 flex flex-col items-center mt-4 justify-start lg:justify-center lg:items-start'>
+                <div className='w-full flex flex-col items-center lg:items-start'>
+                    <h1 className='w-full text-center lg:text-left text-4xl lg:text-5xl font-semibold hero-title overflow-hidden'>
+                        {data.primary.hero_title}
+                    </h1>
+                    <h4 className=' text-center lg:text-left hero-paragraph overflow-hidden text-xl'>
+                        {data.primary.hero_paragraph}
+                    </h4>
+                    <a href='#contacts' className='mt-8' >
+                        <div className=' flex justify-center text-white items-center lg:justify-start rounded-md bg-btn-secondary-color w-auto uppercase text-center px-5 py-3' >
+                            Contattaci
+                        </div>
+                    </a>
                 </div>
-                {/* <svg className='hero-image' viewBox="0 0 592 610" fill="none">
-                    <path d="M592 384.3C592 546.928 436.623 610 267.25 610C97.8763 610 0 546.928 0 384.3C0 221.672 180.57 0 349.943 0C519.317 0 592 221.672 592 384.3Z" fill="url(#pattern0)" />
-                    <defs>
-                        <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
-                            <use href="#image0_3_30" transform="matrix(0.00129043 0 0 0.00109229 -0.0281195 -0.219799)" />
-                        </pattern>
-                        <image id="image0_3_30" width="794" height="1192" href="/hero-image.jpg" />
-                    </defs>
-                </svg> */}
             </div>
         </section>
     )

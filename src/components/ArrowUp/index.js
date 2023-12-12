@@ -13,7 +13,7 @@ function ArrowUp() {
         })
     }, [])
     return (
-        <div className={`${active ? 'active' : ''} arrow-up`} onClick={()=>{
+        <div className={`${active ? 'active' : ''} text-4xl cursor-pointer arrow-up`} onClick={()=>{
             window.scrollTo(0,0)
         }}>
             <IoIosArrowUp />
