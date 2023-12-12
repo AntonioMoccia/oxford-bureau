@@ -36,7 +36,7 @@ function Hero({ data }) {
     return (
         <section id='hero' className='h-screen flex flex-col justify-around mt-12 lg:flex-row-reverse '>
             <div className=' flex justify-center  items-center flex-col lg:h-full h-96 lg:mt-0 mt-10 '>
-                <div className='h-2/3 w-2/3 lg:w-[35rem] lg:h-[35rem] object-cover object-center flex hero-image justify-center rounded-md items-center overflow-hidden'>
+                <div className='h-2/3 w-2/3 lg:w-[30rem] lg:h-[30rem] object-cover object-center flex hero-image justify-center rounded-md items-center overflow-hidden'>
                     <Image loading='eager' src={data.primary.hero_image.url} height={data.primary.hero_image.dimensions.height} width={data.primary.hero_image.dimensions.width} />
                 </div>
             </div>
