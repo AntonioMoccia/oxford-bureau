@@ -35,14 +35,14 @@ export default async function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-       <NavBar />
+        <NavBar />
         <Hero data={getSliceByName(page.data.slices, 'hero')} />
         <About data={getSliceByName(page.data.slices, 'about')} />
         <Services data={getSliceByName(page.data.slices, 'service')} />
         <Contact data={getSliceByName(page.data.slices, 'contacts')} />
-        <ArrowUp /> 
+        <ArrowUp />
       </main>
-    </> 
+    </>
   )
 }
 

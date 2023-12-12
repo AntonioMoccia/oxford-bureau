@@ -1,14 +1,25 @@
 'use client'
 import { PrismicRichText } from '@prismicio/react';
 import React, { useEffect } from 'react'
+import Image from 'next/image'
+function ServiceRight({ service }) {
 
-function ServiceRight({service}) {
- 
     return (
         <div className='service right-img'>
-            <img src={service.service_image.url} />
-            <div className='service-description text-xl lg:text-3xl'>
-            <PrismicRichText field={ service.text_service } />
+            {
+                service.service_image.url ? (
+                    <div className=' w-full lg:w-5/6'>
+                        <Image
+                            className='w-full h-auto'
+                            src={service.service_image.url}
+                            height={service.service_image.dimensions.height}
+                            width={service.service_image.dimensions.width} />
+                    </div>
+
+                ) : null
+            }
+            <div className='service-description text-xl lg:text-xl'>
+                <PrismicRichText field={service.text_service} />
             </div>
         </div>
     )
