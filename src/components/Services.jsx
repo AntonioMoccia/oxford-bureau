@@ -21,7 +21,7 @@ function Services({ data }) {
       const title = service.querySelector('h1')
       const paragraph = service.querySelector('p')
       const splitParagraph = new SplitType(paragraph)
-
+      console.log(title);
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: service,
@@ -46,7 +46,7 @@ function Services({ data }) {
     })
   }, [])
   return (
-    <section id='services' className='lg:px-24 px-6 flex flex-col gap-8 lg:gap-12 pt-20'>
+    <section id='services' className='lg:px-64 px-6 flex flex-col gap-8 lg:gap-12 pt-20'>
       {
         data?.items.map((service, i) => {
           return i % 2 == 0 ? <ServiceLeft key={i} service={service} /> : <ServiceRight key={i} service={service} />

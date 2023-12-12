@@ -33,7 +33,7 @@ function About({ data }) {
   }, [])
   return (
     <section id='about-section'>
-      <div className='about-text px-4 text-2xl lg:text-4xl lg:px-32 py-10'>
+      <div className='about-text px-4 text-2xl lg:text-4xl lg:px-64 py-10'>
         <PrismicRichText field={data.primary.about_text} />
       </div>
       <div className='w-full py-8 flex items-center justify-center'>

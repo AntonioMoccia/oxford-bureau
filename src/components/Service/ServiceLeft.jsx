@@ -9,7 +9,7 @@ function ServiceLeft({ service }) {
         <div className='service'>
             {
                 service.service_image.url ? (
-                    <div className=' w-full lg:w-5/6'>
+                    <div className=' w-full lg:w-10/12'>
                     <Image
                         className='w-full h-auto'
                         src={service.service_image.url}

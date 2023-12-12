@@ -38,7 +38,7 @@ function Contact({ data }) {
 
   return (
     <section id='contacts'>
-      <div className='section-contacts left'>
+      <div className='section-contacts lg:px-64 left'>
         <form className='contact-form gap-3'>
           <InputField
             label={'Email'}
