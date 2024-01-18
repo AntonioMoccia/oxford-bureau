@@ -7,19 +7,24 @@
         width: 100%;
         background-color: var(--secondary-color);
         color: rgb(207, 192, 192);
+        
         strong{
             color: var(--btn-secondary-color) ;
+        }
+        display: flex;
+        flex-direction: column;
+        .line{
+        }
+        
+        .char {
+            opacity: 0.2;
         }
         p {
             /* font-size: 40px; */
             text-transform: lowercase;
            /*  line-height: 60px; */
+            
 
-
-            .char {
-                opacity: 0.2;
-
-            }
         }
     }
 
@@ -57,7 +62,9 @@
                 font-size: 35px;
             }
 
-            p {}
+            p {
+
+            }
         }
     }
 }
@@ -71,7 +78,7 @@
         .about-text {
             width: 100%;
 
-            p {
+            p {                 
                 
                 text-transform: lowercase;
             }

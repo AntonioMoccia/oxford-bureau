@@ -1,5 +1,5 @@
 'use client'
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useLayoutEffect, useRef, useState } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import SplitType from 'split-type';
@@ -7,34 +7,40 @@ import Image from 'next/image';
 import Link from 'next/link';
 function Hero({ data }) {
 
-    useEffect(() => {
+    const [loaded,setLoaded] = useState(true)
+
+    useLayoutEffect(() => {
+        if(!loaded){
+            return
+        }
         let title = new SplitType('.hero-title', { types: 'lines,words' })
         let paragraph = new SplitType('.hero-paragraph', { types: 'lines,words,chars' })
 
         const tl = gsap.timeline()
-
-
-        tl.to('.hero-title .word', {
+        tl.to('.hero-title .line .word', {
             ease: "power2",
-            y: 1,
+            y: 0,
+            delay:0.2,
             duration: 1.2,
-            stagger: 0.01
+            stagger: 0.1
         }).to('.hero-paragraph .char', {
             ease: "power2",
-            y: '1.9%',
+            y: '0',
             duration: 0.8,
-            stagger: 0.01
+            stagger: 0.02
         }, '<').to('.hero-image', {
             ease: "power2",
-            duration: 1,
+            duration:1,
+            delay:0.2,
             clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)"
         }, '<')
-    }, [])
+        setLoaded(false)
+    }, [loaded])
 
 
 
     return (
-        <section id='hero' className='h-screen flex flex-col justify-around mt-12 lg:flex-row-reverse '>
+        <section id='hero' className='h-screen lg:px-64 flex flex-col justify-around mt-12 lg:flex-row-reverse '>
             <div className=' flex justify-center  items-center flex-col lg:h-full h-96 lg:mt-0 mt-10 '>
                 <div className='h-2/3 w-2/3 md:w-[30rem] md:h-[30rem] object-cover object-center flex hero-image justify-center rounded-md items-center overflow-hidden'>
                     <Image loading='eager' src={data.primary.hero_image.url} height={data.primary.hero_image.dimensions.height} width={data.primary.hero_image.dimensions.width} />

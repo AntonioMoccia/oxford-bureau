@@ -6,9 +6,9 @@ function InputField({
     htmlFor
 }) {
     return (
-        <div className='input-field'>
-            <label htmlFor={htmlFor}>{label}</label>
-            <input type={type} id={htmlFor} />
+        <div className='input-field h-16 flex flex-col'>
+            <label className=' text-white' htmlFor={htmlFor}>{label}</label>
+            <input className='bg-secondary-color text-white outline-none border-none' type={type} id={htmlFor} />
             <div className='underline' />
         </div>
     )

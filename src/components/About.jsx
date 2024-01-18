@@ -9,17 +9,17 @@ import { PrismicRichText } from '@prismicio/react'
 
 function About({ data }) {
   useEffect(() => {
-    const aboutText = new SplitType('.about-text', { types: 'lines,words,chars' })
+    const aboutText = new SplitType('.about-text', { types: 'words,chars' })
     gsap.registerPlugin(ScrollTrigger)
 
     const tl = gsap.timeline()
 
 
-    gsap.to('.about-text .line .word .char', {
+    gsap.to('.about-text .char', {
       scrollTrigger: {
         trigger: '#about-section',
         start: `top center`,
-        end: `+=${document.querySelector('#about-section').getBoundingClientRect().height / 1.2}`,
+        end: `+=${document.querySelector('#about-section').getBoundingClientRect().height / 1.5}`,
         scrub: true,
         markers: false
       },
@@ -33,10 +33,10 @@ function About({ data }) {
   }, [])
   return (
     <section id='about-section'>
-      <div className='about-text px-4 text-2xl lg:text-4xl lg:px-64 py-10'>
+      <div className='about-text lg:px-64 px-4 text-md lg:text-4xl py-10'>
         <PrismicRichText field={data.primary.about_text} />
       </div>
-      <div className='w-full py-8 flex items-center justify-center'>
+      <div className='w-full py-8 lg:py-12 flex items-center justify-center'>
         <div className=' grid grid-cols-2 gap-8 md:gap-12  md:grid-cols-3'>
 
           <Badge

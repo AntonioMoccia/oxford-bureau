@@ -49,6 +49,7 @@ const Contacts = ({ slice }) => {
 
       <div className='section-contacts left'>
         <form className='contact-form'>
+   
           <InputField
             label={'Email'}
             type={'text'}

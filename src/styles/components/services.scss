@@ -17,11 +17,10 @@
       
         width: 100%;
         h1 {
-            opacity: 0;
+            opacity: 1;
             font-size: 1.875rem;
-            line-height: 2.25rem;
             text-transform: capitalize;
-            margin-bottom: 30px;
+            margin-bottom: 15px;
         }
         strong{
             color: var(--secondary-color-text);
@@ -51,9 +50,10 @@
 @media (max-width:991px) {
 
     .service {
+        
         display: flex;
         gap: 2.5em;
-        justify-content: space-between;
+        justify-content: center;
         flex-direction: column;
 
         img {
@@ -66,17 +66,19 @@
             flex-direction: column;
             justify-content: center;
             width: 100%;
+            strong{
+                color: var(--secondary-color-text);
+            }
 
             h1 {
-                opacity: 0;
-                font-size: 1.875rem;
-                line-height: 2.25rem;
+                opacity: 1;
+                font-size: 16pt;
                 text-transform: capitalize;
             }
 
             p {
                 width: 100%;
-             
+                font-size: 12pt;
                 text-wrap: wrap;
                 margin: 0%;
             }
@@ -85,7 +87,6 @@
 
     .right-img {
         flex-direction: column;
-
         img {
             width: 100%;
             border-radius: 5px;

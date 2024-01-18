@@ -18,7 +18,7 @@ function ServiceRight({ service }) {
 
                 ) : null
             }
-            <div className='service-description text-xl lg:text-xl'>
+            <div className='text-secondary-color-text service-description lg:pt-3 '>
                 <PrismicRichText field={service.text_service} />
             </div>
         </div>
