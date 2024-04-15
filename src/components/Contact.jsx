@@ -80,50 +80,53 @@ function Contact({ data }) {
   }, [])
 
   return (
-    <section id='contacts' className=' lg:flex-row lg:items-center lg:px-32 justify-center bg-secondary-color pt-16 h-screen flex flex-col gap-6 '>
-      <div className=' left pt-6 lg:w-full  '>
-        <form className='contact-form gap-3 flex flex-col px-7'>
-          <InputField
-            label={'Email'}
-            type={'text'}
-            htmlFor={'email'}
-          />
-          <InputField
-            label={'Nome e cognome'}
-            type={'text'}
-            htmlFor={'nome'}
-          />
-          <TextAreaField
-            onInput={(e) => {
-              autoResize(e)
-            }}
-            onChange={(e) => {
-              setText(e.target.value)
-            }}
-            ref={textAreaRef}
-            label={'Testo'}
-            type={'text'}
-            htmlFor={'testo'}
-          />
-          <button className=' bg-white text-secondary-color w-24 mt-6 py-2 rounded-md px-5'>Invia</button>
-        </form>
-      </div>
-      <div className='gap-6 flex flex-col lg:justify-center  lg:items-center lg:w-full px-7  md:px-36 text-sm mt-12 text-left right'>
-           
-           
-                <div className=' flex lg:flex-col lg:items-start w-full gap-3 items-center text-white'>
-                  <h4 className=' font-bold text-lg'>Email:</h4>
-                  <span className=' text-base'>{data.primary.email}</span>
-                </div>
-                <div className=' flex w-full gap-3 items-center text-white'>
-                  <h4 className=' font-bold text-lg'>Phone Number:</h4>
-                  <span className=' text-base'>{data.primary.phone}</span>
-                </div>
-                <div className=' flex w-full gap-3 items-center text-white'>
-                  <h4 className=' font-bold text-lg'>P.Iva:</h4>
-                  <span className=' text-base'>{data.primary.partita_iva}</span>
-                </div>
+    <section id='contacts' className=' flex justify-center items-center  bg-secondary-color h-screen '>
+      <div className=' max-w-3xl lg:flex-row lg:items-center justify-center  flex flex-col gap-6'>
 
+        <div className=' left pt-6 lg:w-full  '>
+          <form className='contact-form gap-3 flex flex-col'>
+            <InputField
+              label={'Email'}
+              type={'text'}
+              htmlFor={'email'}
+            />
+            <InputField
+              label={'Nome e cognome'}
+              type={'text'}
+              htmlFor={'nome'}
+            />
+            <TextAreaField
+              onInput={(e) => {
+                autoResize(e)
+              }}
+              onChange={(e) => {
+                setText(e.target.value)
+              }}
+              ref={textAreaRef}
+              label={'Testo'}
+              type={'text'}
+              htmlFor={'testo'}
+            />
+            <button className=' bg-white text-secondary-color w-24 mt-6 py-2 rounded-md px-5'>Invia</button>
+          </form>
+        </div>
+        <div className='gap-6 flex flex-col lg:justify-center  lg:items-center lg:w-full px-7  md:px-36 text-sm mt-12 text-left right'>
+
+
+          <div className=' flex lg:flex-col lg:items-start w-full gap-3 items-center text-white'>
+            <h4 className=' font-bold text-lg'>Email:</h4>
+            <span className=' text-base'>{data.primary.email}</span>
+          </div>
+          <div className=' flex w-full gap-3 items-center text-white'>
+            <h4 className=' font-bold text-lg'>Phone Number:</h4>
+            <span className=' text-base'>{data.primary.phone}</span>
+          </div>
+          <div className=' flex w-full gap-3 items-center text-white'>
+            <h4 className=' font-bold text-lg'>P.Iva:</h4>
+            <span className=' text-base'>{data.primary.partita_iva}</span>
+          </div>
+
+        </div>
       </div>
     </section>
   )

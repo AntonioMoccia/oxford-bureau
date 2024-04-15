@@ -43,7 +43,7 @@ function Hero({ data }) {
         <section id='hero' className='h-screen lg:px-64 flex flex-col justify-around mt-12 lg:flex-row-reverse '>
             <div className=' flex justify-center  items-center flex-col lg:h-full h-96 lg:mt-0 mt-10 '>
                 <div className='h-2/3 w-2/3 md:w-[30rem] md:h-[30rem] object-cover object-center flex hero-image justify-center rounded-md items-center overflow-hidden'>
-                    <Image loading='eager' src={data.primary.hero_image.url} height={data.primary.hero_image.dimensions.height} width={data.primary.hero_image.dimensions.width} />
+                    <Image priority={true} src={data.primary.hero_image.url} height={data.primary.hero_image.dimensions.height} width={data.primary.hero_image.dimensions.width} />
                 </div>
             </div>
             <div className='h-full px-12 flex flex-col items-center mt-4 justify-start lg:justify-center lg:items-start'>

@@ -11,6 +11,8 @@ function ServiceLeft({ service }) {
                 service.service_image.url ? (
                     <div className=' w-full lg:w-10/12'>
                     <Image
+                    priority={true}
+                    quality={80}
                         className='w-full h-auto'
                         src={service.service_image.url}
                         height={service.service_image.dimensions.height}
